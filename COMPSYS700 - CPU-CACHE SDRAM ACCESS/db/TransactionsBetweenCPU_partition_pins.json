@@ -1,0 +1,281 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "readfromCPU",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[31]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[30]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[29]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[28]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[27]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[26]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[25]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[24]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[23]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[22]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[21]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[20]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[19]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[18]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[17]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[16]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[15]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[14]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[13]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[12]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[11]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[10]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[9]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[8]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_sdram[0]",
+					"strict" : false
+				},
+				{
+					"name" : "writefromCPU",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[31]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[30]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[29]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[28]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[27]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[26]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[25]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[24]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[23]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[22]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[21]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[20]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[19]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[18]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[17]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[16]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[15]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_fromCPU[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,937 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "r_en1",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_wr_req_out",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_wr_req_out",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_rd_req_out",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_response",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_req_addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_req_addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_req_addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[31]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[30]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[29]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[28]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[27]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[26]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[25]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[24]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[23]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[22]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[21]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[20]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[19]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[18]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[17]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[16]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[15]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[14]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[13]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[12]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[11]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[10]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[9]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[8]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_cache_to_cache_resp_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_req_addr_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_req_addr_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_req_addr_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[31]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[30]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[29]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[28]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[27]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[26]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[25]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[24]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[23]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[22]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[21]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[20]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[19]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[18]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[17]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[16]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[15]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "wr_en1",
+					"strict" : false
+				},
+				{
+					"name" : "wr_en2",
+					"strict" : false
+				},
+				{
+					"name" : "ready1",
+					"strict" : false
+				},
+				{
+					"name" : "ready2",
+					"strict" : false
+				},
+				{
+					"name" : "r_en2",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_addr2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[31]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[30]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[29]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[28]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[27]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[26]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[25]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[24]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[23]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[22]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[21]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[20]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[19]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[18]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[17]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[16]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[15]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[31]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[30]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[29]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[28]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[27]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[26]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[25]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[24]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[23]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[22]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[21]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[20]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[19]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[18]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[17]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[16]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[15]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sdram_data_out2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_rd_req_out",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_response",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_req_addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_req_addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_req_addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[31]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[30]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[29]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[28]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[27]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[26]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[25]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[24]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[23]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[22]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[21]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[20]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[19]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[18]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[17]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[16]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[15]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[14]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[13]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[12]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[11]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[10]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[9]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[8]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_cache_to_cache_resp_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_req_addr_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_req_addr_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_req_addr_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[31]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[30]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[29]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[28]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[27]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[26]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[25]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[24]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[23]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[22]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[21]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[20]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[19]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[18]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[17]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[16]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[15]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sdramDataOut1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_wantedAddr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_wantedAddr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_wantedAddr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu0_prio",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_prio1",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_wantedAddr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_wantedAddr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu1_wantedAddr[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

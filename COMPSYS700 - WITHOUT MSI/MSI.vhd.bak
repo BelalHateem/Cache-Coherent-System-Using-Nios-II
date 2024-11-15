@@ -1,0 +1,45 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity msi_protocol is
+    port (
+        clk         : in std_logic;
+        reset       : in std_logic;
+        cpu0_state  : inout std_logic_vector(1 downto 0);
+        cpu1_state  : inout std_logic_vector(1 downto 0);
+        addr        : in std_logic_vector(31 downto 0);
+        data_in     : in std_logic_vector(31 downto 0);
+        data_out    : out std_logic_vector(31 downto 0);
+        sdram_data  : in std_logic_vector(31 downto 0);
+        sdram_read  : out std_logic;
+        sdram_write : out std_logic
+    );
+end msi_protocol;
+
+architecture Behavioral of msi_protocol is
+begin
+    process(clk, reset)
+    begin
+        if reset = '1' then
+            cpu0_state <= "00"; -- Invalid
+            cpu1_state <= "00"; -- Invalid
+            data_out <= (others => '0');
+        elsif rising_edge(clk) then
+            -- Handle CPU0 writes
+            if cpu0_state = "10" then -- Modified
+                if cpu1_state = "01" then -- Shared in CPU1
+                    cpu1_state <= "00"; -- Invalidate CPU1's cache line
+                end if;
+                data_out <= data_in;
+                sdram_write <= '1';
+            elsif cpu1_state = "10" then -- CPU1 has modified data
+                if cpu0_state = "01" then -- Shared in CPU0
+                    cpu0_state <= "00"; -- Invalidate CPU0's cache line
+                end if;
+                data_out <= sdram_data;
+                sdram_read <= '1';
+            end if;
+        end if;
+    end process;
+end Behavioral;

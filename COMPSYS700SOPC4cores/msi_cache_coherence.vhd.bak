@@ -1,0 +1,56 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity msi_cache_coherence is
+    port (
+        clk      : in  std_logic;
+        reset    : in  std_logic;
+        dataa    : in  std_logic_vector(31 downto 0); -- Input operand A (CPU ID)
+        datab    : in  std_logic_vector(31 downto 0); -- Input operand B (Address)
+        result   : out std_logic_vector(31 downto 0)  -- Output result (Cache State)
+    );
+end entity msi_cache_coherence;
+
+architecture Behavioral of msi_cache_coherence is
+    -- Cache states
+    type cache_state_t is (INVALID, SHARED, MODIFIED);
+    
+    -- Memory for cache states (assuming 4 CPUs, 16 cache lines)
+    type cache_array_t is array (0 to 3, 0 to 15) of cache_state_t;
+    signal cache_state : cache_array_t := (others => (others => INVALID));
+    
+    signal cpu_id : integer;
+    signal line   : integer;
+    signal state  : cache_state_t;
+    
+begin
+    process(clk, reset)
+    begin
+        if reset = '1' then
+            -- Initialize cache states to Invalid
+            for i in 0 to 3 loop
+                for j in 0 to 15 loop
+                    cache_state(i, j) <= INVALID;
+                end loop;
+            end loop;
+            result <= (others => '0');
+        elsif rising_edge(clk) then
+            cpu_id <= to_integer(unsigned(dataa(1 downto 0))); -- Extract CPU ID from dataa
+            line <= to_integer(unsigned(datab(3 downto 0)));   -- Extract cache line from datab (address)
+            state <= cache_state(cpu_id, line);
+            
+            case state is
+                when INVALID =>
+                    cache_state(cpu_id, line) <= SHARED;
+                    result <= x"00000001"; -- Indicates cache miss
+                when SHARED =>
+                    result <= x"00000000"; -- Indicates cache hit
+                when MODIFIED =>
+                    result <= x"00000000"; -- Indicates cache hit
+                when others =>
+                    result <= x"00000000";
+            end case;
+        end if;
+    end process;
+end architecture Behavioral;

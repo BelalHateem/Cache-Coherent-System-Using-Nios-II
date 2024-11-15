@@ -1,0 +1,57 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity cpu1 is
+    port (
+        clk          : in std_logic;
+        reset        : in std_logic;
+        addr         : in std_logic_vector(31 downto 0);
+        data_in      : in std_logic_vector(31 downto 0);
+        data_out     : out std_logic_vector(31 downto 0);
+        read         : in std_logic;
+        write        : in std_logic;
+        sdram_data   : in std_logic_vector(31 downto 0);
+        sdram_addr   : out std_logic_vector(31 downto 0);
+        sdram_read   : out std_logic;
+        sdram_write  : out std_logic;
+        msi_state    : inout std_logic_vector(1 downto 0) -- MSI: 00=Invalid, 01=Shared, 10=Modified
+    );
+end cpu1;
+
+architecture Behavioral of cpu1 is
+    signal cache : std_logic_vector(31 downto 0);
+    signal cache_valid : std_logic := '0';
+begin
+
+    process(clk, reset)
+    begin
+        if reset = '1' then
+            cache <= (others => '0');
+            cache_valid <= '0';
+            data_out <= (others => '0');
+            msi_state <= "00"; -- Invalid
+        elsif rising_edge(clk) then
+            if read = '1' then
+                if msi_state = "00" then
+                    -- Cache miss, read from SDRAM
+                    sdram_addr <= addr;
+                    sdram_read <= '1';
+                    cache <= sdram_data;
+                    msi_state <= "01"; -- Shared
+                    cache_valid <= '1';
+                elsif msi_state = "01" or msi_state = "10" then
+                    -- Cache hit
+                    data_out <= cache;
+                end if;
+            elsif write = '1' then
+                if msi_state = "00" or msi_state = "01" then
+                    -- Write and update state to Modified
+                    cache <= data_in;
+                    cache_valid <= '1';
+                    msi_state <= "10"; -- Modified
+                end if;
+            end if;
+        end if;
+    end process;
+end Behavioral;

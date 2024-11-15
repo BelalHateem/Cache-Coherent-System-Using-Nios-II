@@ -1,0 +1,25 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+
+entity FIFO is
+port(
+clk : in std_logic;
+rst : in std_logic;
+
+cpu0_read_in : in std_logic;
+cpu0_write_in : in std_logic;
+
+cpu1_read_in : in std_logic;
+cpu1_write_in : in std_logic;
+
+
+cpu0_read_out : out std_logic;
+cpu0_write_out: out std_logic;
+
+cpu1_read_out: out std_logic;
+cpu1_write_out: out std_logic
+);
+
+end entity FIFO

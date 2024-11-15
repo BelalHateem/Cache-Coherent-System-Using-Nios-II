@@ -1,0 +1,18 @@
+23:22:59 **** Build of configuration Nios II for project multiprocessorcpu1 ****
+make all 
+Info: Building ../multiprocessorcpu1_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../multiprocessorcpu1_bsp/
+[BSP build complete]
+Info: Compiling maincpu1.c to obj/default/maincpu1.o
+nios2-elf-gcc -xc -MP -MMD -c -I../multiprocessorcpu1_bsp//HAL/inc -I../multiprocessorcpu1_bsp/ -I../multiprocessorcpu1_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/maincpu1.o maincpu1.c
+Info: Linking multiprocessorcpu1.elf
+nios2-elf-g++  -T'../multiprocessorcpu1_bsp//linker.x' -msys-crt0='../multiprocessorcpu1_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../multiprocessorcpu1_bsp/   -Wl,-Map=multiprocessorcpu1.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o multiprocessorcpu1.elf obj/default/maincpu1.o -lm -msys-lib=m
+nios2-elf-insert multiprocessorcpu1.elf --thread_model hal --cpu_name cpu_1 --qsys true --simulation_enabled false --id 0 --sidp 0x8001038 --timestamp 1728814527 --stderr_dev jtag_uart1 --stdin_dev jtag_uart1 --stdout_dev jtag_uart1 --sopc_system_name top --quartus_project_dir "C:/COMPSYS700SOPC" --jdi ../..//output_files/multiprocessor.jdi --sopcinfo C:/COMPSYS700SOPC/software/multiprocessorcpu1_bsp/../../top.sopcinfo
+Info: (multiprocessorcpu1.elf) 30 KBytes program size (code + initialized data).
+Info:                          16346 KBytes free for stack + heap.
+Info: Creating multiprocessorcpu1.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source multiprocessorcpu1.elf >multiprocessorcpu1.objdump
+[multiprocessorcpu1 build complete]
+
+23:23:00 Build Finished (took 1s.150ms)
+

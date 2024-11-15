@@ -1,0 +1,665 @@
+Analysis & Synthesis report for TransactionsBetweenCPU
+Fri Oct 11 20:23:05 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |TransactionsBetweenCPU|cpu0:inst|cpuCacheOperation
+  9. State Machine - |TransactionsBetweenCPU|cpu0:inst|CurrentState
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Oct 11 20:23:05 2024       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; TransactionsBetweenCPU                      ;
+; Top-level Entity Name           ; TransactionsBetweenCPU                      ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 35                                          ;
+; Total pins                      ; 71                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                     ;
++---------------------------------------------------------------------------------+------------------------+------------------------+
+; Option                                                                          ; Setting                ; Default Value          ;
++---------------------------------------------------------------------------------+------------------------+------------------------+
+; Device                                                                          ; 5CSEMA6U23C8           ;                        ;
+; Top-level entity name                                                           ; TransactionsBetweenCPU ; TransactionsBetweenCPU ;
+; Family name                                                                     ; Cyclone V              ; Cyclone V              ;
+; Use smart compilation                                                           ; Off                    ; Off                    ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                     ; On                     ;
+; Enable compact report table                                                     ; Off                    ; Off                    ;
+; Restructure Multiplexers                                                        ; Auto                   ; Auto                   ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                    ; Off                    ;
+; Create Debugging Nodes for IP Cores                                             ; Off                    ; Off                    ;
+; Preserve fewer node names                                                       ; On                     ; On                     ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable                 ; Enable                 ;
+; Verilog Version                                                                 ; Verilog_2001           ; Verilog_2001           ;
+; VHDL Version                                                                    ; VHDL_1993              ; VHDL_1993              ;
+; State Machine Processing                                                        ; Auto                   ; Auto                   ;
+; Safe State Machine                                                              ; Off                    ; Off                    ;
+; Extract Verilog State Machines                                                  ; On                     ; On                     ;
+; Extract VHDL State Machines                                                     ; On                     ; On                     ;
+; Ignore Verilog initial constructs                                               ; Off                    ; Off                    ;
+; Iteration limit for constant Verilog loops                                      ; 5000                   ; 5000                   ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                    ; 250                    ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                     ; On                     ;
+; Infer RAMs from Raw Logic                                                       ; On                     ; On                     ;
+; Parallel Synthesis                                                              ; On                     ; On                     ;
+; DSP Block Balancing                                                             ; Auto                   ; Auto                   ;
+; NOT Gate Push-Back                                                              ; On                     ; On                     ;
+; Power-Up Don't Care                                                             ; On                     ; On                     ;
+; Remove Redundant Logic Cells                                                    ; Off                    ; Off                    ;
+; Remove Duplicate Registers                                                      ; On                     ; On                     ;
+; Ignore CARRY Buffers                                                            ; Off                    ; Off                    ;
+; Ignore CASCADE Buffers                                                          ; Off                    ; Off                    ;
+; Ignore GLOBAL Buffers                                                           ; Off                    ; Off                    ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                    ; Off                    ;
+; Ignore LCELL Buffers                                                            ; Off                    ; Off                    ;
+; Ignore SOFT Buffers                                                             ; On                     ; On                     ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                    ; Off                    ;
+; Optimization Technique                                                          ; Balanced               ; Balanced               ;
+; Carry Chain Length                                                              ; 70                     ; 70                     ;
+; Auto Carry Chains                                                               ; On                     ; On                     ;
+; Auto Open-Drain Pins                                                            ; On                     ; On                     ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                    ; Off                    ;
+; Auto ROM Replacement                                                            ; On                     ; On                     ;
+; Auto RAM Replacement                                                            ; On                     ; On                     ;
+; Auto DSP Block Replacement                                                      ; On                     ; On                     ;
+; Auto Shift Register Replacement                                                 ; Auto                   ; Auto                   ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                   ; Auto                   ;
+; Auto Clock Enable Replacement                                                   ; On                     ; On                     ;
+; Strict RAM Replacement                                                          ; Off                    ; Off                    ;
+; Allow Synchronous Control Signals                                               ; On                     ; On                     ;
+; Force Use of Synchronous Clear Signals                                          ; Off                    ; Off                    ;
+; Auto Resource Sharing                                                           ; Off                    ; Off                    ;
+; Allow Any RAM Size For Recognition                                              ; Off                    ; Off                    ;
+; Allow Any ROM Size For Recognition                                              ; Off                    ; Off                    ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                    ; Off                    ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                     ; On                     ;
+; Ignore translate_off and synthesis_off directives                               ; Off                    ; Off                    ;
+; Timing-Driven Synthesis                                                         ; On                     ; On                     ;
+; Report Parameter Settings                                                       ; On                     ; On                     ;
+; Report Source Assignments                                                       ; On                     ; On                     ;
+; Report Connectivity Checks                                                      ; On                     ; On                     ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                    ; Off                    ;
+; Synchronization Register Chain Length                                           ; 3                      ; 3                      ;
+; Power Optimization During Synthesis                                             ; Normal compilation     ; Normal compilation     ;
+; HDL message level                                                               ; Level2                 ; Level2                 ;
+; Suppress Register Optimization Related Messages                                 ; Off                    ; Off                    ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                   ; 5000                   ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                   ; 5000                   ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                    ; 100                    ;
+; Clock MUX Protection                                                            ; On                     ; On                     ;
+; Auto Gated Clock Conversion                                                     ; Off                    ; Off                    ;
+; Block Design Naming                                                             ; Auto                   ; Auto                   ;
+; SDC constraint protection                                                       ; Off                    ; Off                    ;
+; Synthesis Effort                                                                ; Auto                   ; Auto                   ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                     ; On                     ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                    ; Off                    ;
+; Analysis & Synthesis Message Level                                              ; Medium                 ; Medium                 ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                   ; Auto                   ;
+; Resource Aware Inference For Block RAM                                          ; On                     ; On                     ;
+; Automatic Parallel Synthesis                                                    ; On                     ; On                     ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                    ; Off                    ;
++---------------------------------------------------------------------------------+------------------------+------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                      ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------+---------+
+; cpu0.vhd                         ; yes             ; User VHDL File                     ; C:/COMPSYS700 - CPU-CACHE SDRAM ACCESS/cpu0.vhd                   ;         ;
+; sdram.vhd                        ; yes             ; User VHDL File                     ; C:/COMPSYS700 - CPU-CACHE SDRAM ACCESS/sdram.vhd                  ;         ;
+; TransactionsBetweenCPU.bdf       ; yes             ; User Block Diagram/Schematic File  ; C:/COMPSYS700 - CPU-CACHE SDRAM ACCESS/TransactionsBetweenCPU.bdf ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 29        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 40        ;
+;     -- 7 input functions                    ; 5         ;
+;     -- 6 input functions                    ; 11        ;
+;     -- 5 input functions                    ; 6         ;
+;     -- 4 input functions                    ; 10        ;
+;     -- <=3 input functions                  ; 8         ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 35        ;
+;                                             ;           ;
+; I/O pins                                    ; 71        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 35        ;
+; Total fan-out                               ; 445       ;
+; Average fan-out                             ; 2.05      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                               ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name            ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+------------------------+--------------+
+; |TransactionsBetweenCPU    ; 40 (0)              ; 35 (0)                    ; 0                 ; 0          ; 71   ; 0            ; |TransactionsBetweenCPU             ; TransactionsBetweenCPU ; work         ;
+;    |cpu0:inst|             ; 39 (39)             ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |TransactionsBetweenCPU|cpu0:inst   ; cpu0                   ; work         ;
+;    |sdram:inst3|           ; 1 (1)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TransactionsBetweenCPU|sdram:inst3 ; sdram                  ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TransactionsBetweenCPU|cpu0:inst|cpuCacheOperation                                                   ;
++-------------------------------+------------------------------+-------------------------------+------------------------+
+; Name                          ; cpuCacheOperation.read_cache ; cpuCacheOperation.write_cache ; cpuCacheOperation.none ;
++-------------------------------+------------------------------+-------------------------------+------------------------+
+; cpuCacheOperation.none        ; 0                            ; 0                             ; 0                      ;
+; cpuCacheOperation.write_cache ; 0                            ; 1                             ; 1                      ;
+; cpuCacheOperation.read_cache  ; 1                            ; 0                             ; 1                      ;
++-------------------------------+------------------------------+-------------------------------+------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------+
+; State Machine - |TransactionsBetweenCPU|cpu0:inst|CurrentState                                      ;
++--------------------------+------------------------+--------------------------+----------------------+
+; Name                     ; CurrentState.writeData ; CurrentState.requestData ; CurrentState.initial ;
++--------------------------+------------------------+--------------------------+----------------------+
+; CurrentState.initial     ; 0                      ; 0                        ; 0                    ;
+; CurrentState.requestData ; 0                      ; 1                        ; 1                    ;
+; CurrentState.writeData   ; 1                      ; 0                        ; 1                    ;
++--------------------------+------------------------+--------------------------+----------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++------------------------------------------+---------------------------------------------+
+; Register name                            ; Reason for Removal                          ;
++------------------------------------------+---------------------------------------------+
+; sdram:inst3|data_out[3..9,11..31]        ; Merged with sdram:inst3|data_out[10]        ;
+; cpu0:inst|Sdram_addr[1,2]                ; Merged with cpu0:inst|Sdram_addr[0]         ;
+; cpu0:inst|Sdram_data_out[3..9,11..31]    ; Merged with cpu0:inst|Sdram_data_out[10]    ;
+; cpu0:inst|cache[0].address[1,2]          ; Merged with cpu0:inst|cache[0].address[0]   ;
+; cpu0:inst|wantedAddressLatch[1,2]        ; Merged with cpu0:inst|wantedAddressLatch[0] ;
+; cpu0:inst|cache[1].address[1,2]          ; Merged with cpu0:inst|cache[1].address[0]   ;
+; cpu0:inst|cache[2].address[1,2]          ; Merged with cpu0:inst|cache[2].address[0]   ;
+; cpu0:inst|cache[3].address[1,2]          ; Merged with cpu0:inst|cache[3].address[0]   ;
+; sdram:inst3|memory[0][11]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][12]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][13]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][14]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][15]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][16]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][17]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][18]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][19]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][20]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][21]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][22]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][23]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][24]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][25]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][26]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][27]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][28]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][29]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][30]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][31]                ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][3]                 ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][4]                 ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][5]                 ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][6]                 ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][7]                 ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][8]                 ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[0][9]                 ; Merged with sdram:inst3|memory[0][10]       ;
+; sdram:inst3|memory[1][11]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][12]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][13]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][14]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][15]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][16]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][17]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][18]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][19]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][20]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][21]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][22]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][23]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][24]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][25]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][26]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][27]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][28]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][29]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][30]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][31]                ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][3]                 ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][4]                 ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][5]                 ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][6]                 ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][7]                 ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][8]                 ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[1][9]                 ; Merged with sdram:inst3|memory[1][10]       ;
+; sdram:inst3|memory[2][11]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][12]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][13]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][14]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][15]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][16]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][17]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][18]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][19]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][20]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][21]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][22]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][23]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][24]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][25]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][26]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][27]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][28]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][29]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][30]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][31]                ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][3]                 ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][4]                 ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][5]                 ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][6]                 ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][7]                 ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][8]                 ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[2][9]                 ; Merged with sdram:inst3|memory[2][10]       ;
+; sdram:inst3|memory[3][11]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][12]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][13]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][14]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][15]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][16]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][17]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][18]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][19]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][20]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][21]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][22]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][23]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][24]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][25]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][26]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][27]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][28]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][29]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][30]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][31]                ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][3]                 ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][4]                 ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][5]                 ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][6]                 ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][7]                 ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][8]                 ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[3][9]                 ; Merged with sdram:inst3|memory[3][10]       ;
+; sdram:inst3|memory[4][11]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][12]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][13]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][14]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][15]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][16]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][17]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][18]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][19]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][20]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][21]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][22]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][23]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][24]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][25]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][26]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][27]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][28]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][29]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][30]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][31]                ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][3]                 ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][4]                 ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][5]                 ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][6]                 ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][7]                 ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][8]                 ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[4][9]                 ; Merged with sdram:inst3|memory[4][10]       ;
+; sdram:inst3|memory[5][11]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][12]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][13]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][14]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][15]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][16]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][17]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][18]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][19]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][20]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][21]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][22]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][23]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][24]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][25]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][26]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][27]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][28]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][29]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][30]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][31]                ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][3]                 ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][4]                 ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][5]                 ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][6]                 ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][7]                 ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][8]                 ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[5][9]                 ; Merged with sdram:inst3|memory[5][10]       ;
+; sdram:inst3|memory[6][11]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][12]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][13]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][14]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][15]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][16]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][17]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][18]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][19]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][20]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][21]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][22]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][23]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][24]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][25]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][26]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][27]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][28]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][29]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][30]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][31]                ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][3]                 ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][4]                 ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][5]                 ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][6]                 ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][7]                 ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][8]                 ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[6][9]                 ; Merged with sdram:inst3|memory[6][10]       ;
+; sdram:inst3|memory[7][11]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][12]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][13]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][14]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][15]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][16]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][17]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][18]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][19]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][20]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][21]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][22]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][23]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][24]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][25]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][26]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][27]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][28]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][29]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][30]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][31]                ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][3]                 ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][4]                 ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][5]                 ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][6]                 ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][7]                 ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][8]                 ; Merged with sdram:inst3|memory[7][10]       ;
+; sdram:inst3|memory[7][9]                 ; Merged with sdram:inst3|memory[7][10]       ;
+; cpu0:inst|cache[0].data[3..9,11..31]     ; Merged with cpu0:inst|cache[0].data[10]     ;
+; cpu0:inst|cache[1].data[3..9,11..31]     ; Merged with cpu0:inst|cache[1].data[10]     ;
+; cpu0:inst|cache[2].data[3..9,11..31]     ; Merged with cpu0:inst|cache[2].data[10]     ;
+; cpu0:inst|cache[3].data[3..9,11..31]     ; Merged with cpu0:inst|cache[3].data[10]     ;
+; cpu0:inst|wantedAddressCache[1,2]        ; Merged with cpu0:inst|wantedAddressCache[0] ;
+; cpu0:inst|dataToSendToCache[3..9,11..31] ; Merged with cpu0:inst|dataToSendToCache[10] ;
+; cpu0:inst|dataToSendToCache[1,2]         ; Merged with cpu0:inst|dataToSendToCache[0]  ;
+; sdram:inst3|memory[1][10]                ; Lost fanout                                 ;
+; sdram:inst3|memory[2][10]                ; Lost fanout                                 ;
+; sdram:inst3|memory[3][10]                ; Lost fanout                                 ;
+; sdram:inst3|memory[4][10]                ; Lost fanout                                 ;
+; sdram:inst3|memory[5][10]                ; Lost fanout                                 ;
+; sdram:inst3|memory[6][10]                ; Lost fanout                                 ;
+; sdram:inst3|memory[1][2]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[2][2]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[3][2]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[4][2]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[5][2]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[6][2]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[1][1]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[2][1]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[3][1]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[4][1]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[5][1]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[6][1]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[1][0]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[2][0]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[3][0]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[4][0]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[5][0]                 ; Lost fanout                                 ;
+; sdram:inst3|memory[6][0]                 ; Lost fanout                                 ;
+; cpu0:inst|wantedAddressLatch[0]          ; Stuck at GND due to stuck port data_in      ;
+; cpu0:inst|wantedAddressCache[0]          ; Stuck at GND due to stuck port data_in      ;
+; cpu0:inst|dataToSendToCache[10]          ; Stuck at GND due to stuck port data_in      ;
+; sdram:inst3|data_out[1,2]                ; Merged with sdram:inst3|data_out[0]         ;
+; cpu0:inst|Sdram_data_out[1,2]            ; Merged with cpu0:inst|Sdram_data_out[0]     ;
+; sdram:inst3|memory[0][1]                 ; Merged with sdram:inst3|memory[0][0]        ;
+; sdram:inst3|memory[0][2]                 ; Merged with sdram:inst3|memory[0][0]        ;
+; sdram:inst3|memory[7][1]                 ; Merged with sdram:inst3|memory[7][0]        ;
+; sdram:inst3|memory[7][2]                 ; Merged with sdram:inst3|memory[7][0]        ;
+; cpu0:inst|cache[0].data[1,2]             ; Merged with cpu0:inst|cache[0].data[0]      ;
+; cpu0:inst|cache[1].data[1,2]             ; Merged with cpu0:inst|cache[1].data[0]      ;
+; cpu0:inst|cache[2].data[1,2]             ; Merged with cpu0:inst|cache[2].data[0]      ;
+; cpu0:inst|cache[3].data[1,2]             ; Merged with cpu0:inst|cache[3].data[0]      ;
+; cpu0:inst|cache[0].address[0]            ; Stuck at GND due to stuck port data_in      ;
+; cpu0:inst|cache[1].address[0]            ; Stuck at GND due to stuck port data_in      ;
+; cpu0:inst|cache[2].address[0]            ; Stuck at GND due to stuck port data_in      ;
+; cpu0:inst|cache[3].address[0]            ; Stuck at GND due to stuck port data_in      ;
+; cpu0:inst|Sdram_addr[0]                  ; Stuck at GND due to stuck port data_in      ;
+; sdram:inst3|memory[7][10]                ; Lost fanout                                 ;
+; sdram:inst3|memory[7][0]                 ; Lost fanout                                 ;
+; cpu0:inst|indexOfCache[0,1]              ; Lost fanout                                 ;
+; cpu0:inst|emptyCacheIndex[0,1]           ; Lost fanout                                 ;
+; Total Number of Removed Registers = 490  ;                                             ;
++------------------------------------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                     ;
++---------------------------------+---------------------------+-----------------------------------------------------------------------------------+
+; Register name                   ; Reason for Removal        ; Registers Removed due to This Register                                            ;
++---------------------------------+---------------------------+-----------------------------------------------------------------------------------+
+; cpu0:inst|wantedAddressLatch[0] ; Stuck at GND              ; cpu0:inst|wantedAddressCache[0], cpu0:inst|cache[2].address[0],                   ;
+;                                 ; due to stuck port data_in ; cpu0:inst|cache[3].address[0], cpu0:inst|Sdram_addr[0], cpu0:inst|indexOfCache[0] ;
+; cpu0:inst|cache[0].address[0]   ; Stuck at GND              ; cpu0:inst|indexOfCache[1]                                                         ;
+;                                 ; due to stuck port data_in ;                                                                                   ;
++---------------------------------+---------------------------+-----------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 35    ;
+; Number of registers using Synchronous Clear  ; 1     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 31    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 15    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |TransactionsBetweenCPU|cpu0:inst|read_en            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |TransactionsBetweenCPU|cpu0:inst|indexOfCache[0]    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |TransactionsBetweenCPU|cpu0:inst|emptyCacheIndex[0] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |TransactionsBetweenCPU|cpu0:inst|cache[0].data[1]   ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |TransactionsBetweenCPU|cpu0:inst|cache[1].data[1]   ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |TransactionsBetweenCPU|cpu0:inst|cache[2].data[1]   ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |TransactionsBetweenCPU|cpu0:inst|cache[3].data[10]  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |TransactionsBetweenCPU|cpu0:inst|evictCounter[1]    ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |TransactionsBetweenCPU|cpu0:inst|Sdram_data_out[1]  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TransactionsBetweenCPU|cpu0:inst|CurrentState       ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TransactionsBetweenCPU|cpu0:inst|indexOfCache       ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TransactionsBetweenCPU|cpu0:inst|emptyCacheIndex    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 35                          ;
+;     CLR               ; 20                          ;
+;     ENA               ; 4                           ;
+;     ENA CLR           ; 10                          ;
+;     ENA CLR SCLR      ; 1                           ;
+; arriav_lcell_comb     ; 41                          ;
+;     extend            ; 5                           ;
+;         7 data inputs ; 5                           ;
+;     normal            ; 36                          ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 10                          ;
+;         5 data inputs ; 6                           ;
+;         6 data inputs ; 11                          ;
+; boundary_port         ; 71                          ;
+;                       ;                             ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.37                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Fri Oct 11 20:22:54 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TransactionsBetweenCPU -c TransactionsBetweenCPU
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file cpu0.vhd
+    Info (12022): Found design unit 1: cpu0-Behavioral File: C:/COMPSYS700 - CPU-CACHE SDRAM ACCESS/cpu0.vhd Line: 20
+    Info (12023): Found entity 1: cpu0 File: C:/COMPSYS700 - CPU-CACHE SDRAM ACCESS/cpu0.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file sdram.vhd
+    Info (12022): Found design unit 1: sdram-Behavioral File: C:/COMPSYS700 - CPU-CACHE SDRAM ACCESS/sdram.vhd Line: 17
+    Info (12023): Found entity 1: sdram File: C:/COMPSYS700 - CPU-CACHE SDRAM ACCESS/sdram.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file transactionsbetweencpu.bdf
+    Info (12023): Found entity 1: TransactionsBetweenCPU
+Info (12127): Elaborating entity "TransactionsBetweenCPU" for the top level hierarchy
+Info (12128): Elaborating entity "cpu0" for hierarchy "cpu0:inst"
+Warning (10036): Verilog HDL or VHDL warning at cpu0.vhd(45): object "sendDataFromCacheToCpu" assigned a value but never read File: C:/COMPSYS700 - CPU-CACHE SDRAM ACCESS/cpu0.vhd Line: 45
+Info (12128): Elaborating entity "sdram" for hierarchy "sdram:inst3"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sdram_addr_fromCPU[2]" is stuck at GND
+    Warning (13410): Pin "sdram_addr_fromCPU[1]" is stuck at GND
+    Warning (13410): Pin "sdram_addr_fromCPU[0]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 30 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 124 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 69 output pins
+    Info (21061): Implemented 53 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4873 megabytes
+    Info: Processing ended: Fri Oct 11 20:23:05 2024
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:07
+
+

@@ -1,0 +1,84 @@
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst1|cpuCacheOperation
+Name cpuCacheOperation.read_cache cpuCacheOperation.write_cache cpuCacheOperation.none 
+cpuCacheOperation.none 0 0 0 
+cpuCacheOperation.write_cache 0 1 1 
+cpuCacheOperation.read_cache 1 0 1 
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst1|CurrentState
+Name CurrentState.writeData CurrentState.requestData CurrentState.initial 
+CurrentState.initial 0 0 0 
+CurrentState.requestData 0 1 1 
+CurrentState.writeData 1 0 1 
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst1|sdramState
+Name sdramState.readResponseCACHE sdramState.readResponseSDRAM sdramState.checkCache 
+sdramState.checkCache 0 0 0 
+sdramState.readResponseSDRAM 0 1 1 
+sdramState.readResponseCACHE 1 0 1 
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst1|cache[3].MSI
+Name cache[3].MSI.modified cache[3].MSI.sharedd cache[3].MSI.invalid 
+cache[3].MSI.invalid 0 0 0 
+cache[3].MSI.sharedd 0 1 1 
+cache[3].MSI.modified 1 0 1 
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst1|cache[2].MSI
+Name cache[2].MSI.modified cache[2].MSI.sharedd cache[2].MSI.invalid 
+cache[2].MSI.invalid 0 0 0 
+cache[2].MSI.sharedd 0 1 1 
+cache[2].MSI.modified 1 0 1 
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst1|cache[1].MSI
+Name cache[1].MSI.modified cache[1].MSI.sharedd cache[1].MSI.invalid 
+cache[1].MSI.invalid 0 0 0 
+cache[1].MSI.sharedd 0 1 1 
+cache[1].MSI.modified 1 0 1 
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst1|cache[0].MSI
+Name cache[0].MSI.modified cache[0].MSI.sharedd cache[0].MSI.invalid 
+cache[0].MSI.invalid 0 0 0 
+cache[0].MSI.sharedd 0 1 1 
+cache[0].MSI.modified 1 0 1 
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst0|cpuCacheOperation
+Name cpuCacheOperation.read_cache cpuCacheOperation.write_cache cpuCacheOperation.none 
+cpuCacheOperation.none 0 0 0 
+cpuCacheOperation.write_cache 0 1 1 
+cpuCacheOperation.read_cache 1 0 1 
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst0|CurrentState
+Name CurrentState.writeData CurrentState.requestData CurrentState.initial 
+CurrentState.initial 0 0 0 
+CurrentState.requestData 0 1 1 
+CurrentState.writeData 1 0 1 
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst0|sdramState
+Name sdramState.readResponseCACHE sdramState.readResponseSDRAM sdramState.checkCache 
+sdramState.checkCache 0 0 0 
+sdramState.readResponseSDRAM 0 1 1 
+sdramState.readResponseCACHE 1 0 1 
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst0|cache[3].MSI
+Name cache[3].MSI.modified cache[3].MSI.sharedd cache[3].MSI.invalid 
+cache[3].MSI.invalid 0 0 0 
+cache[3].MSI.sharedd 0 1 1 
+cache[3].MSI.modified 1 0 1 
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst0|cache[2].MSI
+Name cache[2].MSI.modified cache[2].MSI.sharedd cache[2].MSI.invalid 
+cache[2].MSI.invalid 0 0 0 
+cache[2].MSI.sharedd 0 1 1 
+cache[2].MSI.modified 1 0 1 
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst0|cache[1].MSI
+Name cache[1].MSI.modified cache[1].MSI.sharedd cache[1].MSI.invalid 
+cache[1].MSI.invalid 0 0 0 
+cache[1].MSI.sharedd 0 1 1 
+cache[1].MSI.modified 1 0 1 
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst0|cache[0].MSI
+Name cache[0].MSI.modified cache[0].MSI.sharedd cache[0].MSI.invalid 
+cache[0].MSI.invalid 0 0 0 
+cache[0].MSI.sharedd 0 1 1 
+cache[0].MSI.modified 1 0 1 

@@ -1,0 +1,3309 @@
+$comment
+	File created using the following command:
+		vcd file TransactionsBetweenCPU.msim.vcd -direction
+$end
+$date
+	Tue Sep 17 23:17:43 2024
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module transactionsbetweencpu_vhd_vec_tst $end
+$var wire 1 ! clk $end
+$var wire 1 " CurrentState [1] $end
+$var wire 1 # CurrentState [0] $end
+$var wire 1 $ data_out_sdram [31] $end
+$var wire 1 % data_out_sdram [30] $end
+$var wire 1 & data_out_sdram [29] $end
+$var wire 1 ' data_out_sdram [28] $end
+$var wire 1 ( data_out_sdram [27] $end
+$var wire 1 ) data_out_sdram [26] $end
+$var wire 1 * data_out_sdram [25] $end
+$var wire 1 + data_out_sdram [24] $end
+$var wire 1 , data_out_sdram [23] $end
+$var wire 1 - data_out_sdram [22] $end
+$var wire 1 . data_out_sdram [21] $end
+$var wire 1 / data_out_sdram [20] $end
+$var wire 1 0 data_out_sdram [19] $end
+$var wire 1 1 data_out_sdram [18] $end
+$var wire 1 2 data_out_sdram [17] $end
+$var wire 1 3 data_out_sdram [16] $end
+$var wire 1 4 data_out_sdram [15] $end
+$var wire 1 5 data_out_sdram [14] $end
+$var wire 1 6 data_out_sdram [13] $end
+$var wire 1 7 data_out_sdram [12] $end
+$var wire 1 8 data_out_sdram [11] $end
+$var wire 1 9 data_out_sdram [10] $end
+$var wire 1 : data_out_sdram [9] $end
+$var wire 1 ; data_out_sdram [8] $end
+$var wire 1 < data_out_sdram [7] $end
+$var wire 1 = data_out_sdram [6] $end
+$var wire 1 > data_out_sdram [5] $end
+$var wire 1 ? data_out_sdram [4] $end
+$var wire 1 @ data_out_sdram [3] $end
+$var wire 1 A data_out_sdram [2] $end
+$var wire 1 B data_out_sdram [1] $end
+$var wire 1 C data_out_sdram [0] $end
+$var wire 1 D readfromCPU $end
+$var wire 1 E reset $end
+$var wire 1 F sdram_addr_fromCPU [2] $end
+$var wire 1 G sdram_addr_fromCPU [1] $end
+$var wire 1 H sdram_addr_fromCPU [0] $end
+$var wire 1 I sdram_data_fromCPU [31] $end
+$var wire 1 J sdram_data_fromCPU [30] $end
+$var wire 1 K sdram_data_fromCPU [29] $end
+$var wire 1 L sdram_data_fromCPU [28] $end
+$var wire 1 M sdram_data_fromCPU [27] $end
+$var wire 1 N sdram_data_fromCPU [26] $end
+$var wire 1 O sdram_data_fromCPU [25] $end
+$var wire 1 P sdram_data_fromCPU [24] $end
+$var wire 1 Q sdram_data_fromCPU [23] $end
+$var wire 1 R sdram_data_fromCPU [22] $end
+$var wire 1 S sdram_data_fromCPU [21] $end
+$var wire 1 T sdram_data_fromCPU [20] $end
+$var wire 1 U sdram_data_fromCPU [19] $end
+$var wire 1 V sdram_data_fromCPU [18] $end
+$var wire 1 W sdram_data_fromCPU [17] $end
+$var wire 1 X sdram_data_fromCPU [16] $end
+$var wire 1 Y sdram_data_fromCPU [15] $end
+$var wire 1 Z sdram_data_fromCPU [14] $end
+$var wire 1 [ sdram_data_fromCPU [13] $end
+$var wire 1 \ sdram_data_fromCPU [12] $end
+$var wire 1 ] sdram_data_fromCPU [11] $end
+$var wire 1 ^ sdram_data_fromCPU [10] $end
+$var wire 1 _ sdram_data_fromCPU [9] $end
+$var wire 1 ` sdram_data_fromCPU [8] $end
+$var wire 1 a sdram_data_fromCPU [7] $end
+$var wire 1 b sdram_data_fromCPU [6] $end
+$var wire 1 c sdram_data_fromCPU [5] $end
+$var wire 1 d sdram_data_fromCPU [4] $end
+$var wire 1 e sdram_data_fromCPU [3] $end
+$var wire 1 f sdram_data_fromCPU [2] $end
+$var wire 1 g sdram_data_fromCPU [1] $end
+$var wire 1 h sdram_data_fromCPU [0] $end
+$var wire 1 i writefromCPU $end
+
+$scope module i1 $end
+$var wire 1 j gnd $end
+$var wire 1 k vcc $end
+$var wire 1 l unknown $end
+$var wire 1 m devoe $end
+$var wire 1 n devclrn $end
+$var wire 1 o devpor $end
+$var wire 1 p ww_devoe $end
+$var wire 1 q ww_devclrn $end
+$var wire 1 r ww_devpor $end
+$var wire 1 s ww_readfromCPU $end
+$var wire 1 t ww_clk $end
+$var wire 1 u ww_reset $end
+$var wire 1 v ww_data_out_sdram [31] $end
+$var wire 1 w ww_data_out_sdram [30] $end
+$var wire 1 x ww_data_out_sdram [29] $end
+$var wire 1 y ww_data_out_sdram [28] $end
+$var wire 1 z ww_data_out_sdram [27] $end
+$var wire 1 { ww_data_out_sdram [26] $end
+$var wire 1 | ww_data_out_sdram [25] $end
+$var wire 1 } ww_data_out_sdram [24] $end
+$var wire 1 ~ ww_data_out_sdram [23] $end
+$var wire 1 !! ww_data_out_sdram [22] $end
+$var wire 1 "! ww_data_out_sdram [21] $end
+$var wire 1 #! ww_data_out_sdram [20] $end
+$var wire 1 $! ww_data_out_sdram [19] $end
+$var wire 1 %! ww_data_out_sdram [18] $end
+$var wire 1 &! ww_data_out_sdram [17] $end
+$var wire 1 '! ww_data_out_sdram [16] $end
+$var wire 1 (! ww_data_out_sdram [15] $end
+$var wire 1 )! ww_data_out_sdram [14] $end
+$var wire 1 *! ww_data_out_sdram [13] $end
+$var wire 1 +! ww_data_out_sdram [12] $end
+$var wire 1 ,! ww_data_out_sdram [11] $end
+$var wire 1 -! ww_data_out_sdram [10] $end
+$var wire 1 .! ww_data_out_sdram [9] $end
+$var wire 1 /! ww_data_out_sdram [8] $end
+$var wire 1 0! ww_data_out_sdram [7] $end
+$var wire 1 1! ww_data_out_sdram [6] $end
+$var wire 1 2! ww_data_out_sdram [5] $end
+$var wire 1 3! ww_data_out_sdram [4] $end
+$var wire 1 4! ww_data_out_sdram [3] $end
+$var wire 1 5! ww_data_out_sdram [2] $end
+$var wire 1 6! ww_data_out_sdram [1] $end
+$var wire 1 7! ww_data_out_sdram [0] $end
+$var wire 1 8! ww_writefromCPU $end
+$var wire 1 9! ww_sdram_addr_fromCPU [2] $end
+$var wire 1 :! ww_sdram_addr_fromCPU [1] $end
+$var wire 1 ;! ww_sdram_addr_fromCPU [0] $end
+$var wire 1 <! ww_sdram_data_fromCPU [31] $end
+$var wire 1 =! ww_sdram_data_fromCPU [30] $end
+$var wire 1 >! ww_sdram_data_fromCPU [29] $end
+$var wire 1 ?! ww_sdram_data_fromCPU [28] $end
+$var wire 1 @! ww_sdram_data_fromCPU [27] $end
+$var wire 1 A! ww_sdram_data_fromCPU [26] $end
+$var wire 1 B! ww_sdram_data_fromCPU [25] $end
+$var wire 1 C! ww_sdram_data_fromCPU [24] $end
+$var wire 1 D! ww_sdram_data_fromCPU [23] $end
+$var wire 1 E! ww_sdram_data_fromCPU [22] $end
+$var wire 1 F! ww_sdram_data_fromCPU [21] $end
+$var wire 1 G! ww_sdram_data_fromCPU [20] $end
+$var wire 1 H! ww_sdram_data_fromCPU [19] $end
+$var wire 1 I! ww_sdram_data_fromCPU [18] $end
+$var wire 1 J! ww_sdram_data_fromCPU [17] $end
+$var wire 1 K! ww_sdram_data_fromCPU [16] $end
+$var wire 1 L! ww_sdram_data_fromCPU [15] $end
+$var wire 1 M! ww_sdram_data_fromCPU [14] $end
+$var wire 1 N! ww_sdram_data_fromCPU [13] $end
+$var wire 1 O! ww_sdram_data_fromCPU [12] $end
+$var wire 1 P! ww_sdram_data_fromCPU [11] $end
+$var wire 1 Q! ww_sdram_data_fromCPU [10] $end
+$var wire 1 R! ww_sdram_data_fromCPU [9] $end
+$var wire 1 S! ww_sdram_data_fromCPU [8] $end
+$var wire 1 T! ww_sdram_data_fromCPU [7] $end
+$var wire 1 U! ww_sdram_data_fromCPU [6] $end
+$var wire 1 V! ww_sdram_data_fromCPU [5] $end
+$var wire 1 W! ww_sdram_data_fromCPU [4] $end
+$var wire 1 X! ww_sdram_data_fromCPU [3] $end
+$var wire 1 Y! ww_sdram_data_fromCPU [2] $end
+$var wire 1 Z! ww_sdram_data_fromCPU [1] $end
+$var wire 1 [! ww_sdram_data_fromCPU [0] $end
+$var wire 1 \! ww_CurrentState [1] $end
+$var wire 1 ]! ww_CurrentState [0] $end
+$var wire 1 ^! \~QUARTUS_CREATED_GND~I_combout\ $end
+$var wire 1 _! \clk~input_o\ $end
+$var wire 1 `! \clk~inputCLKENA0_outclk\ $end
+$var wire 1 a! \inst|hit~0_combout\ $end
+$var wire 1 b! \reset~input_o\ $end
+$var wire 1 c! \inst|CurrentState.initial~feeder_combout\ $end
+$var wire 1 d! \inst|CurrentState.initial~q\ $end
+$var wire 1 e! \inst|CurrentState~12_combout\ $end
+$var wire 1 f! \inst|CurrentState.execute~DUPLICATE_q\ $end
+$var wire 1 g! \inst|cpuCacheOperation~7_combout\ $end
+$var wire 1 h! \inst|Selector193~0_combout\ $end
+$var wire 1 i! \inst|cpuCacheOperation.read_cache~q\ $end
+$var wire 1 j! \inst|hit~q\ $end
+$var wire 1 k! \inst|CurrentState.execute~q\ $end
+$var wire 1 l! \inst|CurrentState.writeData~DUPLICATE_q\ $end
+$var wire 1 m! \inst|Selector191~0_combout\ $end
+$var wire 1 n! \inst|CurrentState.requestData~q\ $end
+$var wire 1 o! \inst|CurrentState.writeData~q\ $end
+$var wire 1 p! \inst|Selector190~0_combout\ $end
+$var wire 1 q! \inst|wantedAddress[0]~DUPLICATE_q\ $end
+$var wire 1 r! \inst|cpuCacheOperation.write_cache~q\ $end
+$var wire 1 s! \inst|Selector194~0_combout\ $end
+$var wire 1 t! \inst|cpuCacheOperation.write_cache~DUPLICATE_q\ $end
+$var wire 1 u! \inst|cpuCacheOperation.none~q\ $end
+$var wire 1 v! \inst|cpuCacheOperation.none~0_combout\ $end
+$var wire 1 w! \inst|cpuCacheOperation.none~DUPLICATE_q\ $end
+$var wire 1 x! \inst|emptyCacheIndex[1]~2_combout\ $end
+$var wire 1 y! \inst|cache[2].valid~0_combout\ $end
+$var wire 1 z! \inst|cache[2].valid~q\ $end
+$var wire 1 {! \inst|emptyCacheIndex~1_combout\ $end
+$var wire 1 |! \inst|cache[3].valid~0_combout\ $end
+$var wire 1 }! \inst|cache[3].valid~q\ $end
+$var wire 1 ~! \inst|emptyCacheIndex~0_combout\ $end
+$var wire 1 !" \inst|cache[1].valid~0_combout\ $end
+$var wire 1 "" \inst|cache[1].valid~q\ $end
+$var wire 1 #" \inst|cache[0].valid~q\ $end
+$var wire 1 $" \inst|cache[3].valid~DUPLICATE_q\ $end
+$var wire 1 %" \inst|cache[1].valid~DUPLICATE_q\ $end
+$var wire 1 &" \inst|isCacheFull~0_combout\ $end
+$var wire 1 '" \inst|evictCounter[0]~1_combout\ $end
+$var wire 1 (" \inst|evictCounter[0]~0_combout\ $end
+$var wire 1 )" \inst|evictCounter[1]~2_combout\ $end
+$var wire 1 *" \inst|address~0_combout\ $end
+$var wire 1 +" \inst|cache[3].address[0]~0_combout\ $end
+$var wire 1 ," \inst|cache[0].address[0]~DUPLICATE_q\ $end
+$var wire 1 -" \inst|isInCache~0_combout\ $end
+$var wire 1 ." \inst|wantedAddressCache[0]~0_combout\ $end
+$var wire 1 /" \inst|cache~0_combout\ $end
+$var wire 1 0" \inst|address~3_combout\ $end
+$var wire 1 1" \inst|cache[0].address[0]~0_combout\ $end
+$var wire 1 2" \inst|sdramState~0_combout\ $end
+$var wire 1 3" \inst|sdramState~q\ $end
+$var wire 1 4" \inst|address~1_combout\ $end
+$var wire 1 5" \inst|cache[1].address[0]~0_combout\ $end
+$var wire 1 6" \inst|Selector7~0_combout\ $end
+$var wire 1 7" \inst|cache[0].valid~0_combout\ $end
+$var wire 1 8" \inst|cache[0].valid~DUPLICATE_q\ $end
+$var wire 1 9" \inst|address~2_combout\ $end
+$var wire 1 :" \inst|cache[2].address[0]~0_combout\ $end
+$var wire 1 ;" \inst|read_en~0_combout\ $end
+$var wire 1 <" \inst|read_en~feeder_combout\ $end
+$var wire 1 =" \inst|read_en~q\ $end
+$var wire 1 >" \inst|indexOfCache[0]~2_combout\ $end
+$var wire 1 ?" \inst|indexOfCache~0_combout\ $end
+$var wire 1 @" \inst|indexOfCache~1_combout\ $end
+$var wire 1 A" \inst|Selector144~0_combout\ $end
+$var wire 1 B" \inst|cache[3].data[10]~0_combout\ $end
+$var wire 1 C" \inst|Selector70~0_combout\ $end
+$var wire 1 D" \inst|cache[1].data[10]~0_combout\ $end
+$var wire 1 E" \inst|Selector33~0_combout\ $end
+$var wire 1 F" \inst|cache[0].data[10]~0_combout\ $end
+$var wire 1 G" \inst|Selector107~0_combout\ $end
+$var wire 1 H" \inst|cache[2].data[10]~0_combout\ $end
+$var wire 1 I" \inst|Selector177~0_combout\ $end
+$var wire 1 J" \inst|cache~2_combout\ $end
+$var wire 1 K" \inst|cache[0].dirtyBit~1_combout\ $end
+$var wire 1 L" \inst|cache[2].dirtyBit~0_combout\ $end
+$var wire 1 M" \inst|cache[2].dirtyBit~1_combout\ $end
+$var wire 1 N" \inst|cache[2].dirtyBit~q\ $end
+$var wire 1 O" \inst|cache[3].dirtyBit~0_combout\ $end
+$var wire 1 P" \inst|cache[3].dirtyBit~1_combout\ $end
+$var wire 1 Q" \inst|cache[3].dirtyBit~2_combout\ $end
+$var wire 1 R" \inst|cache[3].dirtyBit~q\ $end
+$var wire 1 S" \inst|cache[0].dirtyBit~0_combout\ $end
+$var wire 1 T" \inst|cache[0].dirtyBit~2_combout\ $end
+$var wire 1 U" \inst|cache[0].dirtyBit~3_combout\ $end
+$var wire 1 V" \inst|cache[0].dirtyBit~q\ $end
+$var wire 1 W" \inst|cache~1_combout\ $end
+$var wire 1 X" \inst|cache[1].dirtyBit~0_combout\ $end
+$var wire 1 Y" \inst|cache[1].dirtyBit~1_combout\ $end
+$var wire 1 Z" \inst|cache[1].dirtyBit~q\ $end
+$var wire 1 [" \inst|Mux3~0_combout\ $end
+$var wire 1 \" \inst|Sdram_data_out[10]~0_combout\ $end
+$var wire 1 ]" \inst|Sdram_addr[0]~0_combout\ $end
+$var wire 1 ^" \inst|cache[3].address[0]~DUPLICATE_q\ $end
+$var wire 1 _" \inst|Sdram_addr[0]~1_combout\ $end
+$var wire 1 `" \inst|Sdram_addr[0]~2_combout\ $end
+$var wire 1 a" \inst|Selector4~0_combout\ $end
+$var wire 1 b" \inst|Sdram_addr[0]~3_combout\ $end
+$var wire 1 c" \inst|Selector155~0_combout\ $end
+$var wire 1 d" \inst|write_en~q\ $end
+$var wire 1 e" \inst3|Decoder0~1_combout\ $end
+$var wire 1 f" \inst3|memory[0][10]~q\ $end
+$var wire 1 g" \inst3|Decoder0~0_combout\ $end
+$var wire 1 h" \inst3|memory[1][10]~q\ $end
+$var wire 1 i" \inst3|Mux21~0_combout\ $end
+$var wire 1 j" \inst3|data_out[10]~0_combout\ $end
+$var wire 1 k" \inst|dataToSendToCache[2]~0_combout\ $end
+$var wire 1 l" \inst|Selector42~0_combout\ $end
+$var wire 1 m" \inst|Selector155~1_combout\ $end
+$var wire 1 n" \inst|cache[1].data[2]~1_combout\ $end
+$var wire 1 o" \inst|cache[2].data[1]~1_combout\ $end
+$var wire 1 p" \inst|cache[3].data[1]~1_combout\ $end
+$var wire 1 q" \inst|cache[0].data[2]~1_combout\ $end
+$var wire 1 r" \inst|Selector186~0_combout\ $end
+$var wire 1 s" \inst3|memory[0][1]~q\ $end
+$var wire 1 t" \inst3|memory[1][1]~feeder_combout\ $end
+$var wire 1 u" \inst3|memory[1][1]~q\ $end
+$var wire 1 v" \inst3|Mux30~0_combout\ $end
+$var wire 1 w" \inst|Selector43~0_combout\ $end
+$var wire 1 x" \inst|Selector187~0_combout\ $end
+$var wire 1 y" \inst3|memory[0][0]~q\ $end
+$var wire 1 z" \inst3|memory[1][0]~0_combout\ $end
+$var wire 1 {" \inst3|memory[1][0]~q\ $end
+$var wire 1 |" \inst3|Mux31~0_combout\ $end
+$var wire 1 }" \inst|write_en~DUPLICATE_q\ $end
+$var wire 1 ~" \inst|currentState_output~0_combout\ $end
+$var wire 1 !# \inst|cache[2].address\ [2] $end
+$var wire 1 "# \inst|cache[2].address\ [1] $end
+$var wire 1 ## \inst|cache[2].address\ [0] $end
+$var wire 1 $# \inst3|data_out\ [31] $end
+$var wire 1 %# \inst3|data_out\ [30] $end
+$var wire 1 &# \inst3|data_out\ [29] $end
+$var wire 1 '# \inst3|data_out\ [28] $end
+$var wire 1 (# \inst3|data_out\ [27] $end
+$var wire 1 )# \inst3|data_out\ [26] $end
+$var wire 1 *# \inst3|data_out\ [25] $end
+$var wire 1 +# \inst3|data_out\ [24] $end
+$var wire 1 ,# \inst3|data_out\ [23] $end
+$var wire 1 -# \inst3|data_out\ [22] $end
+$var wire 1 .# \inst3|data_out\ [21] $end
+$var wire 1 /# \inst3|data_out\ [20] $end
+$var wire 1 0# \inst3|data_out\ [19] $end
+$var wire 1 1# \inst3|data_out\ [18] $end
+$var wire 1 2# \inst3|data_out\ [17] $end
+$var wire 1 3# \inst3|data_out\ [16] $end
+$var wire 1 4# \inst3|data_out\ [15] $end
+$var wire 1 5# \inst3|data_out\ [14] $end
+$var wire 1 6# \inst3|data_out\ [13] $end
+$var wire 1 7# \inst3|data_out\ [12] $end
+$var wire 1 8# \inst3|data_out\ [11] $end
+$var wire 1 9# \inst3|data_out\ [10] $end
+$var wire 1 :# \inst3|data_out\ [9] $end
+$var wire 1 ;# \inst3|data_out\ [8] $end
+$var wire 1 <# \inst3|data_out\ [7] $end
+$var wire 1 =# \inst3|data_out\ [6] $end
+$var wire 1 ># \inst3|data_out\ [5] $end
+$var wire 1 ?# \inst3|data_out\ [4] $end
+$var wire 1 @# \inst3|data_out\ [3] $end
+$var wire 1 A# \inst3|data_out\ [2] $end
+$var wire 1 B# \inst3|data_out\ [1] $end
+$var wire 1 C# \inst3|data_out\ [0] $end
+$var wire 1 D# \inst|wantedAddress\ [2] $end
+$var wire 1 E# \inst|wantedAddress\ [1] $end
+$var wire 1 F# \inst|wantedAddress\ [0] $end
+$var wire 1 G# \inst|Sdram_addr\ [2] $end
+$var wire 1 H# \inst|Sdram_addr\ [1] $end
+$var wire 1 I# \inst|Sdram_addr\ [0] $end
+$var wire 1 J# \inst|cache[3].address\ [2] $end
+$var wire 1 K# \inst|cache[3].address\ [1] $end
+$var wire 1 L# \inst|cache[3].address\ [0] $end
+$var wire 1 M# \inst|Sdram_data_out\ [31] $end
+$var wire 1 N# \inst|Sdram_data_out\ [30] $end
+$var wire 1 O# \inst|Sdram_data_out\ [29] $end
+$var wire 1 P# \inst|Sdram_data_out\ [28] $end
+$var wire 1 Q# \inst|Sdram_data_out\ [27] $end
+$var wire 1 R# \inst|Sdram_data_out\ [26] $end
+$var wire 1 S# \inst|Sdram_data_out\ [25] $end
+$var wire 1 T# \inst|Sdram_data_out\ [24] $end
+$var wire 1 U# \inst|Sdram_data_out\ [23] $end
+$var wire 1 V# \inst|Sdram_data_out\ [22] $end
+$var wire 1 W# \inst|Sdram_data_out\ [21] $end
+$var wire 1 X# \inst|Sdram_data_out\ [20] $end
+$var wire 1 Y# \inst|Sdram_data_out\ [19] $end
+$var wire 1 Z# \inst|Sdram_data_out\ [18] $end
+$var wire 1 [# \inst|Sdram_data_out\ [17] $end
+$var wire 1 \# \inst|Sdram_data_out\ [16] $end
+$var wire 1 ]# \inst|Sdram_data_out\ [15] $end
+$var wire 1 ^# \inst|Sdram_data_out\ [14] $end
+$var wire 1 _# \inst|Sdram_data_out\ [13] $end
+$var wire 1 `# \inst|Sdram_data_out\ [12] $end
+$var wire 1 a# \inst|Sdram_data_out\ [11] $end
+$var wire 1 b# \inst|Sdram_data_out\ [10] $end
+$var wire 1 c# \inst|Sdram_data_out\ [9] $end
+$var wire 1 d# \inst|Sdram_data_out\ [8] $end
+$var wire 1 e# \inst|Sdram_data_out\ [7] $end
+$var wire 1 f# \inst|Sdram_data_out\ [6] $end
+$var wire 1 g# \inst|Sdram_data_out\ [5] $end
+$var wire 1 h# \inst|Sdram_data_out\ [4] $end
+$var wire 1 i# \inst|Sdram_data_out\ [3] $end
+$var wire 1 j# \inst|Sdram_data_out\ [2] $end
+$var wire 1 k# \inst|Sdram_data_out\ [1] $end
+$var wire 1 l# \inst|Sdram_data_out\ [0] $end
+$var wire 1 m# \inst|cache[0].address\ [2] $end
+$var wire 1 n# \inst|cache[0].address\ [1] $end
+$var wire 1 o# \inst|cache[0].address\ [0] $end
+$var wire 1 p# \inst|currentState_output\ [1] $end
+$var wire 1 q# \inst|currentState_output\ [0] $end
+$var wire 1 r# \inst|cache[1].address\ [2] $end
+$var wire 1 s# \inst|cache[1].address\ [1] $end
+$var wire 1 t# \inst|cache[1].address\ [0] $end
+$var wire 1 u# \inst|evictCounter\ [1] $end
+$var wire 1 v# \inst|evictCounter\ [0] $end
+$var wire 1 w# \inst|indexOfCache\ [1] $end
+$var wire 1 x# \inst|indexOfCache\ [0] $end
+$var wire 1 y# \inst|cache[0].data\ [31] $end
+$var wire 1 z# \inst|cache[0].data\ [30] $end
+$var wire 1 {# \inst|cache[0].data\ [29] $end
+$var wire 1 |# \inst|cache[0].data\ [28] $end
+$var wire 1 }# \inst|cache[0].data\ [27] $end
+$var wire 1 ~# \inst|cache[0].data\ [26] $end
+$var wire 1 !$ \inst|cache[0].data\ [25] $end
+$var wire 1 "$ \inst|cache[0].data\ [24] $end
+$var wire 1 #$ \inst|cache[0].data\ [23] $end
+$var wire 1 $$ \inst|cache[0].data\ [22] $end
+$var wire 1 %$ \inst|cache[0].data\ [21] $end
+$var wire 1 &$ \inst|cache[0].data\ [20] $end
+$var wire 1 '$ \inst|cache[0].data\ [19] $end
+$var wire 1 ($ \inst|cache[0].data\ [18] $end
+$var wire 1 )$ \inst|cache[0].data\ [17] $end
+$var wire 1 *$ \inst|cache[0].data\ [16] $end
+$var wire 1 +$ \inst|cache[0].data\ [15] $end
+$var wire 1 ,$ \inst|cache[0].data\ [14] $end
+$var wire 1 -$ \inst|cache[0].data\ [13] $end
+$var wire 1 .$ \inst|cache[0].data\ [12] $end
+$var wire 1 /$ \inst|cache[0].data\ [11] $end
+$var wire 1 0$ \inst|cache[0].data\ [10] $end
+$var wire 1 1$ \inst|cache[0].data\ [9] $end
+$var wire 1 2$ \inst|cache[0].data\ [8] $end
+$var wire 1 3$ \inst|cache[0].data\ [7] $end
+$var wire 1 4$ \inst|cache[0].data\ [6] $end
+$var wire 1 5$ \inst|cache[0].data\ [5] $end
+$var wire 1 6$ \inst|cache[0].data\ [4] $end
+$var wire 1 7$ \inst|cache[0].data\ [3] $end
+$var wire 1 8$ \inst|cache[0].data\ [2] $end
+$var wire 1 9$ \inst|cache[0].data\ [1] $end
+$var wire 1 :$ \inst|cache[0].data\ [0] $end
+$var wire 1 ;$ \inst|cache[1].data\ [31] $end
+$var wire 1 <$ \inst|cache[1].data\ [30] $end
+$var wire 1 =$ \inst|cache[1].data\ [29] $end
+$var wire 1 >$ \inst|cache[1].data\ [28] $end
+$var wire 1 ?$ \inst|cache[1].data\ [27] $end
+$var wire 1 @$ \inst|cache[1].data\ [26] $end
+$var wire 1 A$ \inst|cache[1].data\ [25] $end
+$var wire 1 B$ \inst|cache[1].data\ [24] $end
+$var wire 1 C$ \inst|cache[1].data\ [23] $end
+$var wire 1 D$ \inst|cache[1].data\ [22] $end
+$var wire 1 E$ \inst|cache[1].data\ [21] $end
+$var wire 1 F$ \inst|cache[1].data\ [20] $end
+$var wire 1 G$ \inst|cache[1].data\ [19] $end
+$var wire 1 H$ \inst|cache[1].data\ [18] $end
+$var wire 1 I$ \inst|cache[1].data\ [17] $end
+$var wire 1 J$ \inst|cache[1].data\ [16] $end
+$var wire 1 K$ \inst|cache[1].data\ [15] $end
+$var wire 1 L$ \inst|cache[1].data\ [14] $end
+$var wire 1 M$ \inst|cache[1].data\ [13] $end
+$var wire 1 N$ \inst|cache[1].data\ [12] $end
+$var wire 1 O$ \inst|cache[1].data\ [11] $end
+$var wire 1 P$ \inst|cache[1].data\ [10] $end
+$var wire 1 Q$ \inst|cache[1].data\ [9] $end
+$var wire 1 R$ \inst|cache[1].data\ [8] $end
+$var wire 1 S$ \inst|cache[1].data\ [7] $end
+$var wire 1 T$ \inst|cache[1].data\ [6] $end
+$var wire 1 U$ \inst|cache[1].data\ [5] $end
+$var wire 1 V$ \inst|cache[1].data\ [4] $end
+$var wire 1 W$ \inst|cache[1].data\ [3] $end
+$var wire 1 X$ \inst|cache[1].data\ [2] $end
+$var wire 1 Y$ \inst|cache[1].data\ [1] $end
+$var wire 1 Z$ \inst|cache[1].data\ [0] $end
+$var wire 1 [$ \inst|cache[2].data\ [31] $end
+$var wire 1 \$ \inst|cache[2].data\ [30] $end
+$var wire 1 ]$ \inst|cache[2].data\ [29] $end
+$var wire 1 ^$ \inst|cache[2].data\ [28] $end
+$var wire 1 _$ \inst|cache[2].data\ [27] $end
+$var wire 1 `$ \inst|cache[2].data\ [26] $end
+$var wire 1 a$ \inst|cache[2].data\ [25] $end
+$var wire 1 b$ \inst|cache[2].data\ [24] $end
+$var wire 1 c$ \inst|cache[2].data\ [23] $end
+$var wire 1 d$ \inst|cache[2].data\ [22] $end
+$var wire 1 e$ \inst|cache[2].data\ [21] $end
+$var wire 1 f$ \inst|cache[2].data\ [20] $end
+$var wire 1 g$ \inst|cache[2].data\ [19] $end
+$var wire 1 h$ \inst|cache[2].data\ [18] $end
+$var wire 1 i$ \inst|cache[2].data\ [17] $end
+$var wire 1 j$ \inst|cache[2].data\ [16] $end
+$var wire 1 k$ \inst|cache[2].data\ [15] $end
+$var wire 1 l$ \inst|cache[2].data\ [14] $end
+$var wire 1 m$ \inst|cache[2].data\ [13] $end
+$var wire 1 n$ \inst|cache[2].data\ [12] $end
+$var wire 1 o$ \inst|cache[2].data\ [11] $end
+$var wire 1 p$ \inst|cache[2].data\ [10] $end
+$var wire 1 q$ \inst|cache[2].data\ [9] $end
+$var wire 1 r$ \inst|cache[2].data\ [8] $end
+$var wire 1 s$ \inst|cache[2].data\ [7] $end
+$var wire 1 t$ \inst|cache[2].data\ [6] $end
+$var wire 1 u$ \inst|cache[2].data\ [5] $end
+$var wire 1 v$ \inst|cache[2].data\ [4] $end
+$var wire 1 w$ \inst|cache[2].data\ [3] $end
+$var wire 1 x$ \inst|cache[2].data\ [2] $end
+$var wire 1 y$ \inst|cache[2].data\ [1] $end
+$var wire 1 z$ \inst|cache[2].data\ [0] $end
+$var wire 1 {$ \inst|cache[3].data\ [31] $end
+$var wire 1 |$ \inst|cache[3].data\ [30] $end
+$var wire 1 }$ \inst|cache[3].data\ [29] $end
+$var wire 1 ~$ \inst|cache[3].data\ [28] $end
+$var wire 1 !% \inst|cache[3].data\ [27] $end
+$var wire 1 "% \inst|cache[3].data\ [26] $end
+$var wire 1 #% \inst|cache[3].data\ [25] $end
+$var wire 1 $% \inst|cache[3].data\ [24] $end
+$var wire 1 %% \inst|cache[3].data\ [23] $end
+$var wire 1 &% \inst|cache[3].data\ [22] $end
+$var wire 1 '% \inst|cache[3].data\ [21] $end
+$var wire 1 (% \inst|cache[3].data\ [20] $end
+$var wire 1 )% \inst|cache[3].data\ [19] $end
+$var wire 1 *% \inst|cache[3].data\ [18] $end
+$var wire 1 +% \inst|cache[3].data\ [17] $end
+$var wire 1 ,% \inst|cache[3].data\ [16] $end
+$var wire 1 -% \inst|cache[3].data\ [15] $end
+$var wire 1 .% \inst|cache[3].data\ [14] $end
+$var wire 1 /% \inst|cache[3].data\ [13] $end
+$var wire 1 0% \inst|cache[3].data\ [12] $end
+$var wire 1 1% \inst|cache[3].data\ [11] $end
+$var wire 1 2% \inst|cache[3].data\ [10] $end
+$var wire 1 3% \inst|cache[3].data\ [9] $end
+$var wire 1 4% \inst|cache[3].data\ [8] $end
+$var wire 1 5% \inst|cache[3].data\ [7] $end
+$var wire 1 6% \inst|cache[3].data\ [6] $end
+$var wire 1 7% \inst|cache[3].data\ [5] $end
+$var wire 1 8% \inst|cache[3].data\ [4] $end
+$var wire 1 9% \inst|cache[3].data\ [3] $end
+$var wire 1 :% \inst|cache[3].data\ [2] $end
+$var wire 1 ;% \inst|cache[3].data\ [1] $end
+$var wire 1 <% \inst|cache[3].data\ [0] $end
+$var wire 1 =% \inst|wantedAddressCache\ [2] $end
+$var wire 1 >% \inst|wantedAddressCache\ [1] $end
+$var wire 1 ?% \inst|wantedAddressCache\ [0] $end
+$var wire 1 @% \inst|emptyCacheIndex\ [1] $end
+$var wire 1 A% \inst|emptyCacheIndex\ [0] $end
+$var wire 1 B% \inst|dataToSendToCache\ [31] $end
+$var wire 1 C% \inst|dataToSendToCache\ [30] $end
+$var wire 1 D% \inst|dataToSendToCache\ [29] $end
+$var wire 1 E% \inst|dataToSendToCache\ [28] $end
+$var wire 1 F% \inst|dataToSendToCache\ [27] $end
+$var wire 1 G% \inst|dataToSendToCache\ [26] $end
+$var wire 1 H% \inst|dataToSendToCache\ [25] $end
+$var wire 1 I% \inst|dataToSendToCache\ [24] $end
+$var wire 1 J% \inst|dataToSendToCache\ [23] $end
+$var wire 1 K% \inst|dataToSendToCache\ [22] $end
+$var wire 1 L% \inst|dataToSendToCache\ [21] $end
+$var wire 1 M% \inst|dataToSendToCache\ [20] $end
+$var wire 1 N% \inst|dataToSendToCache\ [19] $end
+$var wire 1 O% \inst|dataToSendToCache\ [18] $end
+$var wire 1 P% \inst|dataToSendToCache\ [17] $end
+$var wire 1 Q% \inst|dataToSendToCache\ [16] $end
+$var wire 1 R% \inst|dataToSendToCache\ [15] $end
+$var wire 1 S% \inst|dataToSendToCache\ [14] $end
+$var wire 1 T% \inst|dataToSendToCache\ [13] $end
+$var wire 1 U% \inst|dataToSendToCache\ [12] $end
+$var wire 1 V% \inst|dataToSendToCache\ [11] $end
+$var wire 1 W% \inst|dataToSendToCache\ [10] $end
+$var wire 1 X% \inst|dataToSendToCache\ [9] $end
+$var wire 1 Y% \inst|dataToSendToCache\ [8] $end
+$var wire 1 Z% \inst|dataToSendToCache\ [7] $end
+$var wire 1 [% \inst|dataToSendToCache\ [6] $end
+$var wire 1 \% \inst|dataToSendToCache\ [5] $end
+$var wire 1 ]% \inst|dataToSendToCache\ [4] $end
+$var wire 1 ^% \inst|dataToSendToCache\ [3] $end
+$var wire 1 _% \inst|dataToSendToCache\ [2] $end
+$var wire 1 `% \inst|dataToSendToCache\ [1] $end
+$var wire 1 a% \inst|dataToSendToCache\ [0] $end
+$var wire 1 b% \inst|ALT_INV_CurrentState.writeData~q\ $end
+$var wire 1 c% \inst|ALT_INV_address~0_combout\ $end
+$var wire 1 d% \inst|ALT_INV_cache~0_combout\ $end
+$var wire 1 e% \inst|ALT_INV_wantedAddressCache\ [0] $end
+$var wire 1 f% \inst|ALT_INV_cpuCacheOperation~7_combout\ $end
+$var wire 1 g% \inst|ALT_INV_CurrentState.execute~q\ $end
+$var wire 1 h% \inst|ALT_INV_CurrentState.requestData~q\ $end
+$var wire 1 i% \inst|ALT_INV_CurrentState.initial~q\ $end
+$var wire 1 j% \inst|ALT_INV_cache[3].data\ [10] $end
+$var wire 1 k% \inst|ALT_INV_cache[3].data\ [9] $end
+$var wire 1 l% \inst|ALT_INV_cache[3].data\ [8] $end
+$var wire 1 m% \inst|ALT_INV_cache[3].data\ [7] $end
+$var wire 1 n% \inst|ALT_INV_cache[3].data\ [6] $end
+$var wire 1 o% \inst|ALT_INV_cache[3].data\ [5] $end
+$var wire 1 p% \inst|ALT_INV_cache[3].data\ [4] $end
+$var wire 1 q% \inst|ALT_INV_cache[3].data\ [3] $end
+$var wire 1 r% \inst|ALT_INV_cache[3].data\ [2] $end
+$var wire 1 s% \inst|ALT_INV_cache[3].data\ [1] $end
+$var wire 1 t% \inst|ALT_INV_cache[3].data\ [0] $end
+$var wire 1 u% \inst|ALT_INV_cache[2].data\ [10] $end
+$var wire 1 v% \inst|ALT_INV_cache[2].data\ [9] $end
+$var wire 1 w% \inst|ALT_INV_cache[2].data\ [8] $end
+$var wire 1 x% \inst|ALT_INV_cache[2].data\ [7] $end
+$var wire 1 y% \inst|ALT_INV_cache[2].data\ [6] $end
+$var wire 1 z% \inst|ALT_INV_cache[2].data\ [5] $end
+$var wire 1 {% \inst|ALT_INV_cache[2].data\ [4] $end
+$var wire 1 |% \inst|ALT_INV_cache[2].data\ [3] $end
+$var wire 1 }% \inst|ALT_INV_cache[2].data\ [2] $end
+$var wire 1 ~% \inst|ALT_INV_cache[2].data\ [1] $end
+$var wire 1 !& \inst|ALT_INV_cache[2].data\ [0] $end
+$var wire 1 "& \inst|ALT_INV_cache[1].data\ [10] $end
+$var wire 1 #& \inst|ALT_INV_cache[1].data\ [9] $end
+$var wire 1 $& \inst|ALT_INV_cache[1].data\ [8] $end
+$var wire 1 %& \inst|ALT_INV_cache[1].data\ [7] $end
+$var wire 1 && \inst|ALT_INV_cache[1].data\ [6] $end
+$var wire 1 '& \inst|ALT_INV_cache[1].data\ [5] $end
+$var wire 1 (& \inst|ALT_INV_cache[1].data\ [4] $end
+$var wire 1 )& \inst|ALT_INV_cache[1].data\ [3] $end
+$var wire 1 *& \inst|ALT_INV_cache[1].data\ [2] $end
+$var wire 1 +& \inst|ALT_INV_cache[1].data\ [1] $end
+$var wire 1 ,& \inst|ALT_INV_cache[1].data\ [0] $end
+$var wire 1 -& \inst|ALT_INV_cache[0].data\ [10] $end
+$var wire 1 .& \inst|ALT_INV_cache[0].data\ [9] $end
+$var wire 1 /& \inst|ALT_INV_cache[0].data\ [8] $end
+$var wire 1 0& \inst|ALT_INV_cache[0].data\ [7] $end
+$var wire 1 1& \inst|ALT_INV_cache[0].data\ [6] $end
+$var wire 1 2& \inst|ALT_INV_cache[0].data\ [5] $end
+$var wire 1 3& \inst|ALT_INV_cache[0].data\ [4] $end
+$var wire 1 4& \inst|ALT_INV_cache[0].data\ [3] $end
+$var wire 1 5& \inst|ALT_INV_cache[0].data\ [2] $end
+$var wire 1 6& \inst|ALT_INV_cache[0].data\ [1] $end
+$var wire 1 7& \inst|ALT_INV_cache[0].data\ [0] $end
+$var wire 1 8& \inst|ALT_INV_evictCounter[0]~0_combout\ $end
+$var wire 1 9& \inst|ALT_INV_cpuCacheOperation.none~q\ $end
+$var wire 1 :& \inst|ALT_INV_Selector4~0_combout\ $end
+$var wire 1 ;& \inst|ALT_INV_Sdram_addr[0]~2_combout\ $end
+$var wire 1 <& \inst|ALT_INV_indexOfCache~1_combout\ $end
+$var wire 1 =& \inst|ALT_INV_indexOfCache\ [1] $end
+$var wire 1 >& \inst|ALT_INV_indexOfCache\ [0] $end
+$var wire 1 ?& \inst|ALT_INV_Sdram_addr[0]~1_combout\ $end
+$var wire 1 @& \inst|ALT_INV_indexOfCache~0_combout\ $end
+$var wire 1 A& \inst|ALT_INV_Sdram_addr[0]~0_combout\ $end
+$var wire 1 B& \inst|ALT_INV_isInCache~0_combout\ $end
+$var wire 1 C& \inst|ALT_INV_Selector7~0_combout\ $end
+$var wire 1 D& \inst|ALT_INV_cpuCacheOperation.write_cache~q\ $end
+$var wire 1 E& \inst|ALT_INV_Mux3~0_combout\ $end
+$var wire 1 F& \inst|ALT_INV_evictCounter\ [1] $end
+$var wire 1 G& \inst|ALT_INV_evictCounter\ [0] $end
+$var wire 1 H& \inst|ALT_INV_cache[3].dirtyBit~q\ $end
+$var wire 1 I& \inst|ALT_INV_cache[2].dirtyBit~q\ $end
+$var wire 1 J& \inst|ALT_INV_cache[1].dirtyBit~q\ $end
+$var wire 1 K& \inst|ALT_INV_cache[0].dirtyBit~q\ $end
+$var wire 1 L& \inst|ALT_INV_isCacheFull~0_combout\ $end
+$var wire 1 M& \inst|ALT_INV_cache[3].valid~q\ $end
+$var wire 1 N& \inst|ALT_INV_cache[2].valid~q\ $end
+$var wire 1 O& \inst|ALT_INV_cache[1].valid~q\ $end
+$var wire 1 P& \inst|ALT_INV_cache[0].valid~q\ $end
+$var wire 1 Q& \inst3|ALT_INV_memory[0][0]~q\ $end
+$var wire 1 R& \inst3|ALT_INV_memory[1][0]~q\ $end
+$var wire 1 S& \inst3|ALT_INV_memory[0][1]~q\ $end
+$var wire 1 T& \inst3|ALT_INV_memory[1][1]~q\ $end
+$var wire 1 U& \inst3|ALT_INV_memory[0][10]~q\ $end
+$var wire 1 V& \inst3|ALT_INV_memory[1][10]~q\ $end
+$var wire 1 W& \inst|ALT_INV_cpuCacheOperation.read_cache~q\ $end
+$var wire 1 X& \inst|ALT_INV_read_en~0_combout\ $end
+$var wire 1 Y& \inst|ALT_INV_cache[0].address\ [0] $end
+$var wire 1 Z& \inst|ALT_INV_cache[2].address\ [0] $end
+$var wire 1 [& \inst|ALT_INV_cache[1].address\ [0] $end
+$var wire 1 \& \inst|ALT_INV_wantedAddress\ [0] $end
+$var wire 1 ]& \inst|ALT_INV_cache[3].address\ [0] $end
+$var wire 1 ^& \inst|ALT_INV_Sdram_data_out\ [1] $end
+$var wire 1 _& \inst|ALT_INV_Sdram_data_out\ [0] $end
+$var wire 1 `& \inst|ALT_INV_Sdram_addr\ [0] $end
+$var wire 1 a& \inst|ALT_INV_write_en~q\ $end
+$var wire 1 b& \inst3|ALT_INV_data_out\ [10] $end
+$var wire 1 c& \inst3|ALT_INV_data_out\ [9] $end
+$var wire 1 d& \inst3|ALT_INV_data_out\ [8] $end
+$var wire 1 e& \inst3|ALT_INV_data_out\ [7] $end
+$var wire 1 f& \inst3|ALT_INV_data_out\ [6] $end
+$var wire 1 g& \inst3|ALT_INV_data_out\ [5] $end
+$var wire 1 h& \inst3|ALT_INV_data_out\ [4] $end
+$var wire 1 i& \inst3|ALT_INV_data_out\ [3] $end
+$var wire 1 j& \inst3|ALT_INV_data_out\ [2] $end
+$var wire 1 k& \inst3|ALT_INV_data_out\ [1] $end
+$var wire 1 l& \inst3|ALT_INV_data_out\ [0] $end
+$var wire 1 m& \inst|ALT_INV_sdramState~q\ $end
+$var wire 1 n& \inst|ALT_INV_read_en~q\ $end
+$var wire 1 o& \inst|ALT_INV_CurrentState.writeData~DUPLICATE_q\ $end
+$var wire 1 p& \inst|ALT_INV_CurrentState.execute~DUPLICATE_q\ $end
+$var wire 1 q& \inst|ALT_INV_cpuCacheOperation.none~DUPLICATE_q\ $end
+$var wire 1 r& \inst|ALT_INV_cpuCacheOperation.write_cache~DUPLICATE_q\ $end
+$var wire 1 s& \inst|ALT_INV_cache[3].valid~DUPLICATE_q\ $end
+$var wire 1 t& \inst|ALT_INV_cache[1].valid~DUPLICATE_q\ $end
+$var wire 1 u& \inst|ALT_INV_cache[0].valid~DUPLICATE_q\ $end
+$var wire 1 v& \inst|ALT_INV_cache[0].address[0]~DUPLICATE_q\ $end
+$var wire 1 w& \inst|ALT_INV_wantedAddress[0]~DUPLICATE_q\ $end
+$var wire 1 x& \inst|ALT_INV_cache[3].address[0]~DUPLICATE_q\ $end
+$var wire 1 y& \ALT_INV_clk~inputCLKENA0_outclk\ $end
+$var wire 1 z& \ALT_INV_reset~input_o\ $end
+$var wire 1 {& \inst|ALT_INV_hit~q\ $end
+$var wire 1 |& \inst|ALT_INV_Selector155~1_combout\ $end
+$var wire 1 }& \inst|ALT_INV_dataToSendToCache\ [2] $end
+$var wire 1 ~& \inst|ALT_INV_Selector144~0_combout\ $end
+$var wire 1 !' \inst|ALT_INV_Selector107~0_combout\ $end
+$var wire 1 "' \inst|ALT_INV_Selector70~0_combout\ $end
+$var wire 1 #' \inst|ALT_INV_Selector33~0_combout\ $end
+$var wire 1 $' \inst|ALT_INV_cache[3].dirtyBit~1_combout\ $end
+$var wire 1 %' \inst|ALT_INV_cache[3].dirtyBit~0_combout\ $end
+$var wire 1 &' \inst|ALT_INV_cache[2].dirtyBit~0_combout\ $end
+$var wire 1 '' \inst|ALT_INV_cache~2_combout\ $end
+$var wire 1 (' \inst|ALT_INV_cache[1].dirtyBit~0_combout\ $end
+$var wire 1 )' \inst|ALT_INV_cache~1_combout\ $end
+$var wire 1 *' \inst|ALT_INV_cache[0].dirtyBit~2_combout\ $end
+$var wire 1 +' \inst|ALT_INV_cache[0].dirtyBit~1_combout\ $end
+$var wire 1 ,' \inst|ALT_INV_cache[0].dirtyBit~0_combout\ $end
+$var wire 1 -' \inst|ALT_INV_emptyCacheIndex~1_combout\ $end
+$var wire 1 .' \inst|ALT_INV_emptyCacheIndex\ [1] $end
+$var wire 1 /' \inst|ALT_INV_emptyCacheIndex\ [0] $end
+$var wire 1 0' \inst|ALT_INV_emptyCacheIndex~0_combout\ $end
+$var wire 1 1' \inst|ALT_INV_address~3_combout\ $end
+$var wire 1 2' \inst|ALT_INV_address~2_combout\ $end
+$var wire 1 3' \inst|ALT_INV_address~1_combout\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0D
+1E
+0i
+0j
+1k
+xl
+1m
+1n
+1o
+1p
+1q
+1r
+0s
+0t
+1u
+08!
+x^!
+0_!
+0`!
+1a!
+1b!
+1c!
+0d!
+0e!
+0f!
+0g!
+0h!
+0i!
+0j!
+0k!
+0l!
+1m!
+0n!
+0o!
+0p!
+0q!
+0r!
+0s!
+0t!
+0u!
+0v!
+0w!
+0x!
+0y!
+0z!
+0{!
+0|!
+0}!
+0~!
+0!"
+0""
+0#"
+0$"
+0%"
+0&"
+0'"
+0("
+0)"
+0*"
+0+"
+0,"
+0-"
+0."
+0/"
+00"
+01"
+02"
+03"
+04"
+05"
+06"
+07"
+08"
+09"
+0:"
+0;"
+0<"
+0="
+0>"
+1?"
+1@"
+0A"
+0B"
+0C"
+0D"
+0E"
+0F"
+0G"
+0H"
+0I"
+0J"
+0K"
+0L"
+0M"
+0N"
+0O"
+0P"
+0Q"
+0R"
+0S"
+0T"
+0U"
+0V"
+0W"
+0X"
+0Y"
+0Z"
+0["
+0\"
+0]"
+0^"
+1_"
+1`"
+0a"
+0b"
+0c"
+0d"
+0e"
+0f"
+0g"
+0h"
+0i"
+0j"
+0k"
+0l"
+0m"
+0n"
+0o"
+0p"
+0q"
+0r"
+0s"
+0t"
+0u"
+0v"
+0w"
+0x"
+0y"
+1z"
+0{"
+0|"
+0}"
+0~"
+1b%
+1c%
+1d%
+1f%
+1g%
+1h%
+1i%
+18&
+19&
+1:&
+0;&
+0<&
+0?&
+0@&
+1A&
+1B&
+1C&
+1D&
+1E&
+1H&
+1I&
+1J&
+1K&
+1L&
+1M&
+1N&
+1O&
+1P&
+1Q&
+1R&
+1S&
+1T&
+1U&
+1V&
+1W&
+1X&
+1a&
+1m&
+1n&
+1o&
+1p&
+1q&
+1r&
+1s&
+1t&
+1u&
+1v&
+1w&
+1x&
+1y&
+0z&
+1{&
+1|&
+1~&
+1!'
+1"'
+1#'
+1$'
+1%'
+1&'
+1''
+1('
+1)'
+1*'
+1+'
+1,'
+1-'
+10'
+11'
+12'
+13'
+0v
+0w
+0x
+0y
+0z
+0{
+0|
+0}
+0~
+0!!
+0"!
+0#!
+0$!
+0%!
+0&!
+0'!
+0(!
+0)!
+0*!
+0+!
+0,!
+0-!
+0.!
+0/!
+00!
+01!
+02!
+03!
+04!
+05!
+06!
+07!
+09!
+0:!
+0;!
+0<!
+0=!
+0>!
+0?!
+0@!
+0A!
+0B!
+0C!
+0D!
+0E!
+0F!
+0G!
+0H!
+0I!
+0J!
+0K!
+0L!
+0M!
+0N!
+0O!
+0P!
+0Q!
+0R!
+0S!
+0T!
+0U!
+0V!
+0W!
+0X!
+0Y!
+0Z!
+0[!
+0\!
+0]!
+x!#
+x"#
+0##
+x$#
+x%#
+x&#
+x'#
+x(#
+x)#
+x*#
+x+#
+x,#
+x-#
+x.#
+x/#
+x0#
+x1#
+x2#
+x3#
+x4#
+x5#
+x6#
+x7#
+x8#
+09#
+x:#
+x;#
+x<#
+x=#
+x>#
+x?#
+x@#
+xA#
+0B#
+0C#
+xD#
+xE#
+0F#
+xG#
+xH#
+0I#
+xJ#
+xK#
+0L#
+xM#
+xN#
+xO#
+xP#
+xQ#
+xR#
+xS#
+xT#
+xU#
+xV#
+xW#
+xX#
+xY#
+xZ#
+x[#
+x\#
+x]#
+x^#
+x_#
+x`#
+xa#
+0b#
+xc#
+xd#
+xe#
+xf#
+xg#
+xh#
+xi#
+xj#
+0k#
+0l#
+xm#
+xn#
+0o#
+0p#
+0q#
+xr#
+xs#
+0t#
+0u#
+0v#
+0w#
+0x#
+xy#
+xz#
+x{#
+x|#
+x}#
+x~#
+x!$
+x"$
+x#$
+x$$
+x%$
+x&$
+x'$
+x($
+x)$
+x*$
+x+$
+x,$
+x-$
+x.$
+x/$
+00$
+x1$
+x2$
+x3$
+x4$
+x5$
+x6$
+x7$
+x8$
+09$
+0:$
+x;$
+x<$
+x=$
+x>$
+x?$
+x@$
+xA$
+xB$
+xC$
+xD$
+xE$
+xF$
+xG$
+xH$
+xI$
+xJ$
+xK$
+xL$
+xM$
+xN$
+xO$
+0P$
+xQ$
+xR$
+xS$
+xT$
+xU$
+xV$
+xW$
+xX$
+0Y$
+0Z$
+x[$
+x\$
+x]$
+x^$
+x_$
+x`$
+xa$
+xb$
+xc$
+xd$
+xe$
+xf$
+xg$
+xh$
+xi$
+xj$
+xk$
+xl$
+xm$
+xn$
+xo$
+0p$
+xq$
+xr$
+xs$
+xt$
+xu$
+xv$
+xw$
+xx$
+0y$
+0z$
+x{$
+x|$
+x}$
+x~$
+x!%
+x"%
+x#%
+x$%
+x%%
+x&%
+x'%
+x(%
+x)%
+x*%
+x+%
+x,%
+x-%
+x.%
+x/%
+x0%
+x1%
+02%
+x3%
+x4%
+x5%
+x6%
+x7%
+x8%
+x9%
+x:%
+0;%
+0<%
+x=%
+x>%
+0?%
+0@%
+0A%
+xB%
+xC%
+xD%
+xE%
+xF%
+xG%
+xH%
+xI%
+xJ%
+xK%
+xL%
+xM%
+xN%
+xO%
+xP%
+xQ%
+xR%
+xS%
+xT%
+xU%
+xV%
+xW%
+xX%
+xY%
+xZ%
+x[%
+x\%
+x]%
+x^%
+0_%
+x`%
+xa%
+1e%
+1j%
+xk%
+xl%
+xm%
+xn%
+xo%
+xp%
+xq%
+xr%
+1s%
+1t%
+1u%
+xv%
+xw%
+xx%
+xy%
+xz%
+x{%
+x|%
+x}%
+1~%
+1!&
+1"&
+x#&
+x$&
+x%&
+x&&
+x'&
+x(&
+x)&
+x*&
+1+&
+1,&
+1-&
+x.&
+x/&
+x0&
+x1&
+x2&
+x3&
+x4&
+x5&
+16&
+17&
+1=&
+1>&
+1F&
+1G&
+1Y&
+1Z&
+1[&
+1\&
+1]&
+1^&
+1_&
+1`&
+1b&
+xc&
+xd&
+xe&
+xf&
+xg&
+xh&
+xi&
+xj&
+1k&
+1l&
+1}&
+1.'
+1/'
+0"
+0#
+0$
+0%
+0&
+0'
+0(
+0)
+0*
+0+
+0,
+0-
+0.
+0/
+00
+01
+02
+03
+04
+05
+06
+07
+08
+09
+0:
+0;
+0<
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+0F
+0G
+0H
+0I
+0J
+0K
+0L
+0M
+0N
+0O
+0P
+0Q
+0R
+0S
+0T
+0U
+0V
+0W
+0X
+0Y
+0Z
+0[
+0\
+0]
+0^
+0_
+0`
+0a
+0b
+0c
+0d
+0e
+0f
+0g
+0h
+$end
+#10000
+1!
+1t
+1_!
+1`!
+0y&
+#20000
+0!
+0t
+0_!
+0`!
+1y&
+#30000
+1!
+1t
+1_!
+1`!
+0y&
+#40000
+0!
+0t
+0_!
+0`!
+1y&
+#50000
+1!
+1t
+1_!
+1`!
+0y&
+#60000
+0!
+0t
+0_!
+0`!
+1y&
+#70000
+1!
+1t
+1_!
+1`!
+0y&
+#80000
+0!
+0E
+0t
+0u
+0b!
+0_!
+0`!
+1z&
+1y&
+#90000
+1!
+1t
+1_!
+1`!
+0y&
+1d!
+1n!
+0h%
+0i%
+1g!
+1h!
+0f%
+1v!
+#100000
+0!
+0t
+0_!
+0`!
+1y&
+#110000
+1!
+1t
+1_!
+1`!
+0y&
+1i!
+1u!
+1w!
+1q#
+0q&
+09&
+0W&
+1>"
+1]!
+1#
+#120000
+0!
+0t
+0_!
+0`!
+1y&
+#130000
+1!
+1t
+1_!
+1`!
+0y&
+1j!
+1x#
+1w#
+0=&
+0>&
+0{&
+1e!
+0m!
+#140000
+0!
+0t
+0_!
+0`!
+1y&
+#150000
+1!
+1t
+1_!
+1`!
+0y&
+1f!
+1k!
+0n!
+1h%
+0g%
+0p&
+0g!
+0e!
+0h!
+1~"
+1f%
+1h!
+#160000
+0!
+0t
+0_!
+0`!
+1y&
+#170000
+1!
+1t
+1_!
+1`!
+0y&
+0f!
+0k!
+1l!
+1o!
+1p#
+0q#
+0b%
+0o&
+1g%
+1p&
+1g!
+1m!
+1p!
+1s!
+1k"
+0f%
+0]!
+1\!
+0h!
+0#
+1"
+#180000
+0!
+0t
+0_!
+0`!
+1y&
+#190000
+1!
+1t
+1_!
+1`!
+0y&
+0i!
+0l!
+1n!
+1F#
+0o!
+1q!
+1r!
+1t!
+1_%
+1q#
+0}&
+0r&
+0D&
+0w&
+1b%
+0\&
+0h%
+1o&
+1W&
+1e!
+1h!
+0m!
+0~"
+1/"
+1-"
+12"
+1;"
+0s!
+1("
+0_"
+0`"
+16"
+1A"
+1K"
+1p"
+1l"
+1w"
+0+'
+0~&
+0C&
+1;&
+1?&
+08&
+0X&
+0B&
+0d%
+1]!
+1x!
+0A"
+1E"
+0p"
+1q"
+0a!
+1<"
+11"
+17"
+1#
+0#'
+1~&
+#200000
+0!
+0t
+0_!
+0`!
+1y&
+#210000
+1!
+1t
+1_!
+1`!
+0y&
+1f!
+1i!
+1k!
+0n!
+0r!
+0t!
+1#"
+1,"
+1o#
+18"
+19$
+1:$
+0p#
+07&
+06&
+0u&
+0Y&
+0v&
+0P&
+1r&
+1D&
+1h%
+0g%
+0W&
+0p&
+0g!
+1."
+0/"
+0e!
+0h!
+1~"
+0("
+1]"
+1_"
+1`"
+0x!
+0E"
+0K"
+0l"
+0q"
+0w"
+10"
+14"
+0-"
+06"
+0;"
+02"
+0?"
+0@"
+1a"
+1~!
+1r"
+1x"
+00'
+0:&
+1<&
+1@&
+1X&
+1C&
+1B&
+03'
+01'
+1+'
+1#'
+0;&
+0?&
+0A&
+18&
+1d%
+1f%
+0\!
+1h!
+0a"
+0."
+0]"
+1a!
+0<"
+0_"
+0`"
+1b"
+0"
+1;&
+1?&
+1A&
+1:&
+0b"
+1a"
+0:&
+#220000
+0!
+0t
+0_!
+0`!
+1y&
+#230000
+1!
+1t
+1_!
+1`!
+0y&
+0f!
+0k!
+1l!
+1o!
+0x#
+0w#
+1p#
+0q#
+1=&
+1>&
+0b%
+0o&
+1g%
+1p&
+1g!
+1m!
+1s!
+0f%
+0]!
+1\!
+0h!
+0#
+1"
+#240000
+0!
+0t
+0_!
+0`!
+1y&
+#250000
+1!
+1t
+1_!
+1`!
+0y&
+0i!
+0l!
+1n!
+0o!
+1r!
+1t!
+1q#
+0r&
+0D&
+1b%
+0h%
+1o&
+1W&
+1/"
+1e!
+1h!
+0m!
+0~"
+0s!
+1("
+1E"
+1K"
+1l"
+1q"
+1w"
+0+'
+0#'
+08&
+0d%
+1]!
+1T"
+1#
+0*'
+1U"
+#260000
+0!
+0t
+0_!
+0`!
+1y&
+#270000
+1!
+1t
+1_!
+1`!
+0y&
+1f!
+1i!
+1k!
+0n!
+0r!
+0t!
+1V"
+0p#
+0K&
+1r&
+1D&
+1h%
+0g%
+0W&
+0p&
+0g!
+0/"
+0e!
+0h!
+1~"
+0("
+0E"
+0K"
+0l"
+0q"
+0w"
+1["
+0E&
+1+'
+1#'
+18&
+1d%
+1f%
+0\!
+1h!
+0T"
+0"
+1*'
+#280000
+0!
+0t
+0_!
+0`!
+1y&
+#290000
+1!
+1t
+1_!
+1`!
+0y&
+0f!
+0k!
+1l!
+1o!
+1p#
+0q#
+0b%
+0o&
+1g%
+1p&
+1g!
+1m!
+1s!
+0f%
+0]!
+1\!
+0h!
+0#
+1"
+#300000
+0!
+0t
+0_!
+0`!
+1y&
+#310000
+1!
+1t
+1_!
+1`!
+0y&
+0i!
+0l!
+1n!
+0o!
+1r!
+1t!
+1q#
+0r&
+0D&
+1b%
+0h%
+1o&
+1W&
+1/"
+1e!
+1h!
+0m!
+0~"
+0s!
+1("
+1E"
+1K"
+1l"
+1q"
+1w"
+0+'
+0#'
+08&
+0d%
+1]!
+1T"
+1#
+0*'
+#320000
+0!
+0t
+0_!
+0`!
+1y&
+#330000
+1!
+1t
+1_!
+1`!
+0y&
+1f!
+1i!
+1k!
+0n!
+0r!
+0t!
+0p#
+1r&
+1D&
+1h%
+0g%
+0W&
+0p&
+0g!
+0/"
+0e!
+0h!
+1~"
+0("
+0E"
+0K"
+0l"
+0q"
+0w"
+1+'
+1#'
+18&
+1d%
+1f%
+0\!
+1h!
+0T"
+0"
+1*'
+#340000
+0!
+0t
+0_!
+0`!
+1y&
+#350000
+1!
+1t
+1_!
+1`!
+0y&
+0f!
+0k!
+1l!
+1o!
+1p#
+0q#
+0b%
+0o&
+1g%
+1p&
+1g!
+1m!
+1s!
+0f%
+0]!
+1\!
+0h!
+0#
+1"
+#360000
+0!
+0t
+0_!
+0`!
+1y&
+#370000
+1!
+1t
+1_!
+1`!
+0y&
+0i!
+0l!
+1n!
+0o!
+1r!
+1t!
+1q#
+0r&
+0D&
+1b%
+0h%
+1o&
+1W&
+1/"
+1e!
+1h!
+0m!
+0~"
+0s!
+1("
+1E"
+1K"
+1l"
+1q"
+1w"
+0+'
+0#'
+08&
+0d%
+1]!
+1T"
+1#
+0*'
+#380000
+0!
+0t
+0_!
+0`!
+1y&
+#390000
+1!
+1t
+1_!
+1`!
+0y&
+1f!
+1i!
+1k!
+0n!
+0r!
+0t!
+0p#
+1r&
+1D&
+1h%
+0g%
+0W&
+0p&
+0g!
+0/"
+0e!
+0h!
+1~"
+0("
+0E"
+0K"
+0l"
+0q"
+0w"
+1+'
+1#'
+18&
+1d%
+1f%
+0\!
+1h!
+0T"
+0"
+1*'
+#400000
+0!
+0t
+0_!
+0`!
+1y&
+#410000
+1!
+1t
+1_!
+1`!
+0y&
+0f!
+0k!
+1l!
+1o!
+1p#
+0q#
+0b%
+0o&
+1g%
+1p&
+1g!
+1m!
+1s!
+0f%
+0]!
+1\!
+0h!
+0#
+1"
+#420000
+0!
+0t
+0_!
+0`!
+1y&
+#430000
+1!
+1t
+1_!
+1`!
+0y&
+0i!
+0l!
+1n!
+0o!
+1r!
+1t!
+1q#
+0r&
+0D&
+1b%
+0h%
+1o&
+1W&
+1/"
+1e!
+1h!
+0m!
+0~"
+0s!
+1("
+1E"
+1K"
+1l"
+1q"
+1w"
+0+'
+0#'
+08&
+0d%
+1]!
+1T"
+1#
+0*'
+#440000
+0!
+0t
+0_!
+0`!
+1y&
+#450000
+1!
+1t
+1_!
+1`!
+0y&
+1f!
+1i!
+1k!
+0n!
+0r!
+0t!
+0p#
+1r&
+1D&
+1h%
+0g%
+0W&
+0p&
+0g!
+0/"
+0e!
+0h!
+1~"
+0("
+0E"
+0K"
+0l"
+0q"
+0w"
+1+'
+1#'
+18&
+1d%
+1f%
+0\!
+1h!
+0T"
+0"
+1*'
+#460000
+0!
+0t
+0_!
+0`!
+1y&
+#470000
+1!
+1t
+1_!
+1`!
+0y&
+0f!
+0k!
+1l!
+1o!
+1p#
+0q#
+0b%
+0o&
+1g%
+1p&
+1g!
+1m!
+1s!
+0f%
+0]!
+1\!
+0h!
+0#
+1"
+#480000
+0!
+0t
+0_!
+0`!
+1y&
+#490000
+1!
+1t
+1_!
+1`!
+0y&
+0i!
+0l!
+1n!
+0o!
+1r!
+1t!
+1q#
+0r&
+0D&
+1b%
+0h%
+1o&
+1W&
+1/"
+1e!
+1h!
+0m!
+0~"
+0s!
+1("
+1E"
+1K"
+1l"
+1q"
+1w"
+0+'
+0#'
+08&
+0d%
+1]!
+1T"
+1#
+0*'
+#500000
+0!
+0t
+0_!
+0`!
+1y&
+#510000
+1!
+1t
+1_!
+1`!
+0y&
+1f!
+1i!
+1k!
+0n!
+0r!
+0t!
+0p#
+1r&
+1D&
+1h%
+0g%
+0W&
+0p&
+0g!
+0/"
+0e!
+0h!
+1~"
+0("
+0E"
+0K"
+0l"
+0q"
+0w"
+1+'
+1#'
+18&
+1d%
+1f%
+0\!
+1h!
+0T"
+0"
+1*'
+#520000
+0!
+0t
+0_!
+0`!
+1y&
+#530000
+1!
+1t
+1_!
+1`!
+0y&
+0f!
+0k!
+1l!
+1o!
+1p#
+0q#
+0b%
+0o&
+1g%
+1p&
+1g!
+1m!
+1s!
+0f%
+0]!
+1\!
+0h!
+0#
+1"
+#540000
+0!
+0t
+0_!
+0`!
+1y&
+#550000
+1!
+1t
+1_!
+1`!
+0y&
+0i!
+0l!
+1n!
+0o!
+1r!
+1t!
+1q#
+0r&
+0D&
+1b%
+0h%
+1o&
+1W&
+1/"
+1e!
+1h!
+0m!
+0~"
+0s!
+1("
+1E"
+1K"
+1l"
+1q"
+1w"
+0+'
+0#'
+08&
+0d%
+1]!
+1T"
+1#
+0*'
+#560000
+0!
+0t
+0_!
+0`!
+1y&
+#570000
+1!
+1t
+1_!
+1`!
+0y&
+1f!
+1i!
+1k!
+0n!
+0r!
+0t!
+0p#
+1r&
+1D&
+1h%
+0g%
+0W&
+0p&
+0g!
+0/"
+0e!
+0h!
+1~"
+0("
+0E"
+0K"
+0l"
+0q"
+0w"
+1+'
+1#'
+18&
+1d%
+1f%
+0\!
+1h!
+0T"
+0"
+1*'
+#580000
+0!
+0t
+0_!
+0`!
+1y&
+#590000
+1!
+1t
+1_!
+1`!
+0y&
+0f!
+0k!
+1l!
+1o!
+1p#
+0q#
+0b%
+0o&
+1g%
+1p&
+1g!
+1m!
+1s!
+0f%
+0]!
+1\!
+0h!
+0#
+1"
+#600000
+0!
+0t
+0_!
+0`!
+1y&
+#610000
+1!
+1t
+1_!
+1`!
+0y&
+0i!
+0l!
+1n!
+0o!
+1r!
+1t!
+1q#
+0r&
+0D&
+1b%
+0h%
+1o&
+1W&
+1/"
+1e!
+1h!
+0m!
+0~"
+0s!
+1("
+1E"
+1K"
+1l"
+1q"
+1w"
+0+'
+0#'
+08&
+0d%
+1]!
+1T"
+1#
+0*'
+#620000
+0!
+0t
+0_!
+0`!
+1y&
+#630000
+1!
+1t
+1_!
+1`!
+0y&
+1f!
+1i!
+1k!
+0n!
+0r!
+0t!
+0p#
+1r&
+1D&
+1h%
+0g%
+0W&
+0p&
+0g!
+0/"
+0e!
+0h!
+1~"
+0("
+0E"
+0K"
+0l"
+0q"
+0w"
+1+'
+1#'
+18&
+1d%
+1f%
+0\!
+1h!
+0T"
+0"
+1*'
+#640000
+0!
+0t
+0_!
+0`!
+1y&
+#650000
+1!
+1t
+1_!
+1`!
+0y&
+0f!
+0k!
+1l!
+1o!
+1p#
+0q#
+0b%
+0o&
+1g%
+1p&
+1g!
+1m!
+1s!
+0f%
+0]!
+1\!
+0h!
+0#
+1"
+#660000
+0!
+0t
+0_!
+0`!
+1y&
+#670000
+1!
+1t
+1_!
+1`!
+0y&
+0i!
+0l!
+1n!
+0o!
+1r!
+1t!
+1q#
+0r&
+0D&
+1b%
+0h%
+1o&
+1W&
+1/"
+1e!
+1h!
+0m!
+0~"
+0s!
+1("
+1E"
+1K"
+1l"
+1q"
+1w"
+0+'
+0#'
+08&
+0d%
+1]!
+1T"
+1#
+0*'
+#680000
+0!
+0t
+0_!
+0`!
+1y&
+#690000
+1!
+1t
+1_!
+1`!
+0y&
+1f!
+1i!
+1k!
+0n!
+0r!
+0t!
+0p#
+1r&
+1D&
+1h%
+0g%
+0W&
+0p&
+0g!
+0/"
+0e!
+0h!
+1~"
+0("
+0E"
+0K"
+0l"
+0q"
+0w"
+1+'
+1#'
+18&
+1d%
+1f%
+0\!
+1h!
+0T"
+0"
+1*'
+#700000
+0!
+0t
+0_!
+0`!
+1y&
+#710000
+1!
+1t
+1_!
+1`!
+0y&
+0f!
+0k!
+1l!
+1o!
+1p#
+0q#
+0b%
+0o&
+1g%
+1p&
+1g!
+1m!
+1s!
+0f%
+0]!
+1\!
+0h!
+0#
+1"
+#720000
+0!
+0t
+0_!
+0`!
+1y&
+#730000
+1!
+1t
+1_!
+1`!
+0y&
+0i!
+0l!
+1n!
+0o!
+1r!
+1t!
+1q#
+0r&
+0D&
+1b%
+0h%
+1o&
+1W&
+1/"
+1e!
+1h!
+0m!
+0~"
+0s!
+1("
+1E"
+1K"
+1l"
+1q"
+1w"
+0+'
+0#'
+08&
+0d%
+1]!
+1T"
+1#
+0*'
+#740000
+0!
+0t
+0_!
+0`!
+1y&
+#750000
+1!
+1t
+1_!
+1`!
+0y&
+1f!
+1i!
+1k!
+0n!
+0r!
+0t!
+0p#
+1r&
+1D&
+1h%
+0g%
+0W&
+0p&
+0g!
+0/"
+0e!
+0h!
+1~"
+0("
+0E"
+0K"
+0l"
+0q"
+0w"
+1+'
+1#'
+18&
+1d%
+1f%
+0\!
+1h!
+0T"
+0"
+1*'
+#760000
+0!
+0t
+0_!
+0`!
+1y&
+#770000
+1!
+1t
+1_!
+1`!
+0y&
+0f!
+0k!
+1l!
+1o!
+1p#
+0q#
+0b%
+0o&
+1g%
+1p&
+1g!
+1m!
+1s!
+0f%
+0]!
+1\!
+0h!
+0#
+1"
+#780000
+0!
+0t
+0_!
+0`!
+1y&
+#790000
+1!
+1t
+1_!
+1`!
+0y&
+0i!
+0l!
+1n!
+0o!
+1r!
+1t!
+1q#
+0r&
+0D&
+1b%
+0h%
+1o&
+1W&
+1/"
+1e!
+1h!
+0m!
+0~"
+0s!
+1("
+1E"
+1K"
+1l"
+1q"
+1w"
+0+'
+0#'
+08&
+0d%
+1]!
+1T"
+1#
+0*'
+#800000
+0!
+0t
+0_!
+0`!
+1y&
+#810000
+1!
+1t
+1_!
+1`!
+0y&
+1f!
+1i!
+1k!
+0n!
+0r!
+0t!
+0p#
+1r&
+1D&
+1h%
+0g%
+0W&
+0p&
+0g!
+0/"
+0e!
+0h!
+1~"
+0("
+0E"
+0K"
+0l"
+0q"
+0w"
+1+'
+1#'
+18&
+1d%
+1f%
+0\!
+1h!
+0T"
+0"
+1*'
+#820000
+0!
+0t
+0_!
+0`!
+1y&
+#830000
+1!
+1t
+1_!
+1`!
+0y&
+0f!
+0k!
+1l!
+1o!
+1p#
+0q#
+0b%
+0o&
+1g%
+1p&
+1g!
+1m!
+1s!
+0f%
+0]!
+1\!
+0h!
+0#
+1"
+#840000
+0!
+0t
+0_!
+0`!
+1y&
+#850000
+1!
+1t
+1_!
+1`!
+0y&
+0i!
+0l!
+1n!
+0o!
+1r!
+1t!
+1q#
+0r&
+0D&
+1b%
+0h%
+1o&
+1W&
+1/"
+1e!
+1h!
+0m!
+0~"
+0s!
+1("
+1E"
+1K"
+1l"
+1q"
+1w"
+0+'
+0#'
+08&
+0d%
+1]!
+1T"
+1#
+0*'
+#860000
+0!
+0t
+0_!
+0`!
+1y&
+#870000
+1!
+1t
+1_!
+1`!
+0y&
+1f!
+1i!
+1k!
+0n!
+0r!
+0t!
+0p#
+1r&
+1D&
+1h%
+0g%
+0W&
+0p&
+0g!
+0/"
+0e!
+0h!
+1~"
+0("
+0E"
+0K"
+0l"
+0q"
+0w"
+1+'
+1#'
+18&
+1d%
+1f%
+0\!
+1h!
+0T"
+0"
+1*'
+#880000
+0!
+0t
+0_!
+0`!
+1y&
+#890000
+1!
+1t
+1_!
+1`!
+0y&
+0f!
+0k!
+1l!
+1o!
+1p#
+0q#
+0b%
+0o&
+1g%
+1p&
+1g!
+1m!
+1s!
+0f%
+0]!
+1\!
+0h!
+0#
+1"
+#900000
+0!
+0t
+0_!
+0`!
+1y&
+#910000
+1!
+1t
+1_!
+1`!
+0y&
+0i!
+0l!
+1n!
+0o!
+1r!
+1t!
+1q#
+0r&
+0D&
+1b%
+0h%
+1o&
+1W&
+1/"
+1e!
+1h!
+0m!
+0~"
+0s!
+1("
+1E"
+1K"
+1l"
+1q"
+1w"
+0+'
+0#'
+08&
+0d%
+1]!
+1T"
+1#
+0*'
+#920000
+0!
+0t
+0_!
+0`!
+1y&
+#930000
+1!
+1t
+1_!
+1`!
+0y&
+1f!
+1i!
+1k!
+0n!
+0r!
+0t!
+0p#
+1r&
+1D&
+1h%
+0g%
+0W&
+0p&
+0g!
+0/"
+0e!
+0h!
+1~"
+0("
+0E"
+0K"
+0l"
+0q"
+0w"
+1+'
+1#'
+18&
+1d%
+1f%
+0\!
+1h!
+0T"
+0"
+1*'
+#940000
+0!
+0t
+0_!
+0`!
+1y&
+#950000
+1!
+1t
+1_!
+1`!
+0y&
+0f!
+0k!
+1l!
+1o!
+1p#
+0q#
+0b%
+0o&
+1g%
+1p&
+1g!
+1m!
+1s!
+0f%
+0]!
+1\!
+0h!
+0#
+1"
+#960000
+0!
+0t
+0_!
+0`!
+1y&
+#970000
+1!
+1t
+1_!
+1`!
+0y&
+0i!
+0l!
+1n!
+0o!
+1r!
+1t!
+1q#
+0r&
+0D&
+1b%
+0h%
+1o&
+1W&
+1/"
+1e!
+1h!
+0m!
+0~"
+0s!
+1("
+1E"
+1K"
+1l"
+1q"
+1w"
+0+'
+0#'
+08&
+0d%
+1]!
+1T"
+1#
+0*'
+#980000
+0!
+0t
+0_!
+0`!
+1y&
+#990000
+1!
+1t
+1_!
+1`!
+0y&
+1f!
+1i!
+1k!
+0n!
+0r!
+0t!
+0p#
+1r&
+1D&
+1h%
+0g%
+0W&
+0p&
+0g!
+0/"
+0e!
+0h!
+1~"
+0("
+0E"
+0K"
+0l"
+0q"
+0w"
+1+'
+1#'
+18&
+1d%
+1f%
+0\!
+1h!
+0T"
+0"
+1*'
+#1000000

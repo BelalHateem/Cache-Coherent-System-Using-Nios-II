@@ -1,0 +1,367 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity cpu0 is
+     port (
+          clk            : in std_logic;
+          reset          : in std_logic;
+          read_en        : out std_logic;
+          write_en       : out std_logic;
+          Sdram_addr     : out std_logic_vector(2 downto 0);
+          priority       : in std_logic;
+
+           -- MSI output
+          cpu_wr_req_out     : out std_logic; -- CPU write request (broadcast)
+          cpu_rd_req_out     : out std_logic; -- CPU read request (broadcast)
+          cpu_req_addr_out   : out std_logic_vector(2 downto 0); -- Address of our CPU action
+
+          cache_to_cache_resp_out_ready : out std_logic; -- Data on bus valid
+          cache_to_cache_resp_out       : out std_logic; -- Whether or not data found in our cache
+          cache_to_cache_resp_out_data  : out std_logic_vector(31 downto 0); -- Data being sent
+
+          cache_to_cache_req_out        : out std_logic; -- Our data invalid, check other cache
+          cache_to_cache_req_address_out : out std_logic_vector(2 downto 0); -- Address to check
+
+          -- MSI in
+          cpu_wr_req_in     : in std_logic; -- Other CPU's write request
+          cpu_rd_req_in     : in std_logic; -- Other CPU's read request
+          cpu_req_addr_in   : in std_logic_vector(2 downto 0); -- Address of other CPU's action
+
+          cache_to_cache_resp_in_ready : in std_logic; -- Other cache ready to respond
+          cache_to_cache_resp_in       : in std_logic; -- Whether other cache has the data
+          cache_to_cache_resp_in_data  : in std_logic_vector(31 downto 0); -- Data from other cache
+
+          cache_to_cache_req_in        : in std_logic; -- Other cache wants to check our cache
+          cache_to_cache_req_address_in : in std_logic_vector(2 downto 0); -- Address to check
+
+          -- To CPU
+          Sdram_data_in  : in std_logic_vector(31 downto 0);
+          -- To SDRAM
+          Sdram_data_out : out std_logic_vector(31 downto 0);
+          wantedAddress  : in std_logic_vector(2 downto 0)
+     );
+end cpu0;
+
+architecture Behavioral of cpu0 is
+
+     -- Constants
+     constant cacheSize : integer := 4;
+
+     type state is (modified, sharedd, invalid);
+
+     -- Cache line structure
+     type cache_line is record
+          MSI     : state;
+          address : std_logic_vector(2 downto 0); -- Address tag
+          data    : std_logic_vector(31 downto 0); -- Data block
+     end record;
+
+     type cache_array is array (0 to cacheSize-1) of cache_line;
+     signal cache : cache_array;
+     signal hit : std_logic;
+
+     type State_Type is (initial, requestData, writeData);
+     type cache_operation is (read_cache, write_cache, none);
+     type sdramAccess is (checkCache, readResponseSDRAM, readResponseCACHE);
+
+     signal CurrentState : State_Type := initial;
+     signal cpuCacheOperation : cache_operation := none;
+     signal sdramState : sdramAccess := checkCache;
+     signal sendDataFromCacheToCpu : std_logic_vector(31 downto 0);
+     signal dataToSendToCache : std_logic_vector(31 downto 0);
+     signal wantedAddressLatch : std_logic_vector(2 downto 0);
+     -- Round-robin eviction counter
+     signal evictCounter : integer range 0 to cacheSize-1 := 0;
+
+begin
+
+     -- Cache access logic
+     process(clk, reset)
+          variable isInCache : boolean;
+          variable isCacheFull : boolean;
+          variable indexOfCache : integer range 0 to cacheSize-1;
+          variable emptyCacheIndex : integer range 0 to cacheSize-1;
+     begin
+          if reset = '1' then
+               -- Reset the cache
+               for i in 0 to cacheSize-1 loop
+                    cache(i).MSI <= invalid;
+                    cache(i).address <= (others => '0');
+                    cache(i).data <= (others => '0');
+               end loop;
+               -- Reset signals
+               hit <= '0';
+               read_en <= '0';
+               write_en <= '0';
+               sendDataFromCacheToCpu <= (others => '0');
+               evictCounter <= 0;
+               sdramState <= checkCache;
+          elsif falling_edge(clk) then
+               -- Initialize variables
+               isInCache := false;
+               isCacheFull := true;
+               read_en <= '0';
+               write_en <= '0';
+               hit <= '0';
+               cache_to_cache_resp_out_ready <= '0';
+               cache_to_cache_resp_out <= '0';
+               cache_to_cache_req_out <= '0';
+
+               -- Snooping logic for write requests from other CPUs
+               if cpu_wr_req_in = '1' then
+                    for i in 0 to cacheSize-1 loop
+                         if (cache(i).MSI /= invalid) and (cache(i).address = cpu_req_addr_in) then
+                              -- If in Modified state, write back data
+                              if cache(i).MSI = modified then
+                                   write_en <= '1';
+                                   Sdram_data_out <= cache(i).data;
+                                   Sdram_addr <= cache(i).address;
+                              end if;
+                              -- Invalidate cache line
+                              cache(i).MSI <= invalid;
+                              exit; -- Exit after handling
+                         end if;
+                    end loop;
+               end if;
+
+               -- Snooping logic for read requests from other CPUs
+               if cpu_rd_req_in = '1' then
+                    for i in 0 to cacheSize-1 loop
+                         if (cache(i).MSI = modified) and (cache(i).address = cpu_req_addr_in) then
+                              -- Provide data to other CPU
+                              cache_to_cache_resp_out_data <= cache(i).data;
+                              cache_to_cache_resp_out <= '1';
+                              cache_to_cache_resp_out_ready <= '1';
+                              -- Transition to Shared state
+                              cache(i).MSI <= sharedd;
+                              exit; -- Exit after handling
+                         end if;
+                    end loop;
+               end if;
+
+               -- Service cache requests from other CPUs
+               if cache_to_cache_req_in = '1' then
+                    isInCache := false;
+                    for i in 0 to cacheSize-1 loop
+                         if (cache(i).MSI /= invalid) and (cache(i).address = cache_to_cache_req_address_in) then
+                              isInCache := true;
+                              indexOfCache := i;
+                              exit; -- Exit after finding the cache line
+                         end if;
+                    end loop;
+                    if isInCache then
+                         cache_to_cache_resp_out <= '1';
+                         cache_to_cache_resp_out_data <= cache(indexOfCache).data;
+                    else
+                         cache_to_cache_resp_out <= '0';
+                    end if;
+                    cache_to_cache_resp_out_ready <= '1';
+               end if;
+
+               -- Service our CPU's cache operations
+               case cpuCacheOperation is
+                    when read_cache =>
+                         case sdramState is
+                              when checkCache =>
+                                   -- Check if data is in cache
+                                   isInCache := false;
+                                   for i in 0 to cacheSize-1 loop
+                                        if (cache(i).MSI /= invalid) and (cache(i).address = wantedAddressLatch) then
+                                             isInCache := true;
+                                             indexOfCache := i;
+                                             exit; -- Exit after finding the cache line
+                                        end if;
+                                   end loop;
+                                   if isInCache then
+                                        hit <= '1';
+                                        sendDataFromCacheToCpu <= cache(indexOfCache).data;
+                                   else
+                                        hit <= '0';
+                                        -- Send read request to other cache
+                                        cache_to_cache_req_out <= '1';
+                                        cache_to_cache_req_address_out <= wantedAddressLatch;
+                                        sdramState <= readResponseCACHE;
+                                   end if;
+
+                              when readResponseCACHE =>
+                                   if cache_to_cache_resp_in_ready = '1' then
+                                        if cache_to_cache_resp_in = '1' then
+                                             -- Data found in other cache
+                                             -- Insert data into our cache
+                                             isCacheFull := true;
+                                             for i in 0 to cacheSize-1 loop
+                                                  if cache(i).MSI = invalid then
+                                                       isCacheFull := false;
+                                                       emptyCacheIndex := i;
+                                                       exit; -- Exit after finding an empty slot
+                                                  end if;
+                                             end loop;
+                                             if not isCacheFull then
+                                                  cache(emptyCacheIndex).data <= cache_to_cache_resp_in_data;
+                                                  cache(emptyCacheIndex).address <= wantedAddressLatch;
+                                                  cache(emptyCacheIndex).MSI <= sharedd;
+                                             else
+                                                  -- Evict a cache line
+                                                  if cache(evictCounter).MSI = modified then
+                                                       write_en <= '1';
+                                                       Sdram_data_out <= cache(evictCounter).data;
+                                                       Sdram_addr <= cache(evictCounter).address;
+                                                  end if;
+                                                  cache(evictCounter).data <= cache_to_cache_resp_in_data;
+                                                  cache(evictCounter).address <= wantedAddressLatch;
+                                                  cache(evictCounter).MSI <= sharedd;
+                                                  -- Update eviction counter
+                                                  if evictCounter = cacheSize - 1 then
+                                                       evictCounter <= 0;
+                                                  else
+                                                       evictCounter <= evictCounter + 1;
+                                                  end if;
+                                             end if;
+                                             hit <= '1';
+                                             sendDataFromCacheToCpu <= cache_to_cache_resp_in_data;
+                                             sdramState <= checkCache;
+                                        else
+                                             -- Data not found in other cache, read from memory
+                                             read_en <= '1';
+                                             Sdram_addr <= wantedAddressLatch;
+                                             sdramState <= readResponseSDRAM;
+                                        end if;
+                                   end if;
+
+                              when readResponseSDRAM =>
+                                   -- Insert data into cache from SDRAM
+                                   isCacheFull := true;
+                                   for i in 0 to cacheSize-1 loop
+                                        if cache(i).MSI = invalid then
+                                             isCacheFull := false;
+                                             emptyCacheIndex := i;
+                                             exit; -- Exit after finding an empty slot
+                                        end if;
+                                   end loop;
+                                   if not isCacheFull then
+                                        cache(emptyCacheIndex).data <= Sdram_data_in;
+                                        cache(emptyCacheIndex).address <= wantedAddressLatch;
+                                        cache(emptyCacheIndex).MSI <= sharedd;
+                                   else
+                                        -- Evict a cache line
+                                        if cache(evictCounter).MSI = modified then
+                                             write_en <= '1';
+                                             Sdram_data_out <= cache(evictCounter).data;
+                                             Sdram_addr <= cache(evictCounter).address;
+                                        end if;
+                                        cache(evictCounter).data <= Sdram_data_in;
+                                        cache(evictCounter).address <= wantedAddressLatch;
+                                        cache(evictCounter).MSI <= sharedd;
+                                        -- Update eviction counter
+                                        if evictCounter = cacheSize - 1 then
+                                             evictCounter <= 0;
+                                        else
+                                             evictCounter <= evictCounter + 1;
+                                        end if;
+                                   end if;
+                                   hit <= '1';
+                                   sendDataFromCacheToCpu <= Sdram_data_in;
+                                   sdramState <= checkCache;
+                         end case;
+
+                    when write_cache =>
+                         -- Broadcast write request
+                         cpu_wr_req_out <= '1';
+                         cpu_req_addr_out <= wantedAddressLatch;
+
+                         -- Invalidate other caches (handled via snooping)
+                         -- Update our cache
+                         isInCache := false;
+                         for i in 0 to cacheSize-1 loop
+                              if (cache(i).MSI /= invalid) and (cache(i).address = wantedAddressLatch) then
+                                   isInCache := true;
+                                   indexOfCache := i;
+                                   exit; -- Exit after finding the cache line
+                              end if;
+                         end loop;
+                         if isInCache then
+                              cache(indexOfCache).data <= dataToSendToCache;
+                              cache(indexOfCache).MSI <= modified;
+                         else
+                              -- Insert data into cache
+                              isCacheFull := true;
+                              for i in 0 to cacheSize-1 loop
+                                   if cache(i).MSI = invalid then
+                                        isCacheFull := false;
+                                        emptyCacheIndex := i;
+                                        exit; -- Exit after finding an empty slot
+                                   end if;
+                              end loop;
+                              if not isCacheFull then
+                                   cache(emptyCacheIndex).data <= dataToSendToCache;
+                                   cache(emptyCacheIndex).address <= wantedAddressLatch;
+                                   cache(emptyCacheIndex).MSI <= modified;
+                              else
+                                   -- Evict a cache line
+                                   if cache(evictCounter).MSI = modified then
+                                        write_en <= '1';
+                                        Sdram_data_out <= cache(evictCounter).data;
+                                        Sdram_addr <= cache(evictCounter).address;
+                                   end if;
+                                   cache(evictCounter).data <= dataToSendToCache;
+                                   cache(evictCounter).address <= wantedAddressLatch;
+                                   cache(evictCounter).MSI <= modified;
+                                   -- Update eviction counter
+                                   if evictCounter = cacheSize - 1 then
+                                        evictCounter <= 0;
+                                   else
+                                        evictCounter <= evictCounter + 1;
+                                   end if;
+                              end if;
+                         end if;
+                         -- Reset write request after handling
+                         cpu_wr_req_out <= '0';
+                         cpuCacheOperation <= none;
+
+                    when none =>
+                         -- No operation
+                         null;
+               end case;
+          end if;
+     end process;
+
+     -- CPU process
+     process(clk, reset)
+     begin
+          if reset = '1' then
+               CurrentState <= initial;
+               dataToSendToCache <= (others => '0');
+               cpuCacheOperation <= none;
+               cpu_wr_req_out <= '0';
+               cpu_rd_req_out <= '0';
+          elsif rising_edge(clk) then
+               case CurrentState is
+                    when initial =>
+                         -- Start with a write operation
+                         CurrentState <= writeData;
+                         cpuCacheOperation <= write_cache;
+                         wantedAddressLatch <= wantedAddress;
+                         dataToSendToCache <= x"00000007";
+                    when requestData =>
+                         cpu_rd_req_out <= '0';
+                         if hit = '1' then
+                              -- Proceed to write after a successful read
+                              CurrentState <= writeData;
+                              cpuCacheOperation <= write_cache;
+                              dataToSendToCache <= x"00000007"; -- Example data
+                         else
+                              -- Retry reading if not hit
+                              cpuCacheOperation <= read_cache;
+                         end if;
+                    when writeData =>
+                         -- Switch to read operation after writing
+                         wantedAddressLatch <= wantedAddress;
+                         cpuCacheOperation <= read_cache;
+                         CurrentState <= requestData;
+                         cpu_rd_req_out <= '1';
+               end case;
+          end if;
+     end process;
+
+end Behavioral;

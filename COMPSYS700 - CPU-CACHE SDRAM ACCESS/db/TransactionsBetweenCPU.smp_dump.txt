@@ -1,0 +1,12 @@
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst|cpuCacheOperation
+Name cpuCacheOperation.read_cache cpuCacheOperation.write_cache cpuCacheOperation.none 
+cpuCacheOperation.none 0 0 0 
+cpuCacheOperation.write_cache 0 1 1 
+cpuCacheOperation.read_cache 1 0 1 
+
+State Machine - |TransactionsBetweenCPU|cpu0:inst|CurrentState
+Name CurrentState.writeData CurrentState.requestData CurrentState.initial 
+CurrentState.initial 0 0 0 
+CurrentState.requestData 0 1 1 
+CurrentState.writeData 1 0 1 
